@@ -186,6 +186,74 @@ button.active[data-type]:hover {
     line-height: 1.4;
 }
 
+/* Sound post styles */
+[data-types~="sound"] .gallery-content {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+}
+
+[data-types~="sound"] h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+[data-types~="sound"] p {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+/* Video post styles - both gallery and modal */
+[data-types~="video"] .gallery-content {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+}
+
+[data-types~="video"] h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+[data-types~="video"] p {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+.tag[data-type="video"] {
+    color: #2591f5;
+    border-color: #2591f5;
+}
+
+/* Modal-specific video styles */
+.modal-writing {
+    margin-top: 1rem;
+}
+
+/* Link styles */
+.gallery-item-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    height: 100%;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 2px 2px 0 0 #000;  /* offset-x | offset-y | blur-radius | spread-radius | color */
+    border-color: #000;  /* Keep border black */
+}
+
 /* Link styles */
 .gallery-item-link {
     text-decoration: none;
@@ -338,6 +406,25 @@ button.active[data-type]:hover {
     padding: 3rem 3rem 2rem 3rem;
 }
 
+.writing-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.7rem;
+}
+
+.writing-header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.writing-date {
+    color: rgba(0, 0, 0, 0.6);  /* Similar to image-date but for light background */
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.9rem;
+    padding-top: 0.5rem;  /* Align visually with title */
+}
+
 .modal-writing h1 {
     font-size: 2.5rem;
     margin-bottom: 0.7rem;
@@ -360,16 +447,16 @@ button.active[data-type]:hover {
 /* Modal Image Styles */
 .modal-image {
     width: 100%;
-    max-width: 1400px;  /* Increased from 1200px */
-    margin: 0 auto;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 .image-container {
-    width: 100%;
-    max-width: 1200px;  /* Max width for the actual image */
+    display: inline-block;
+    position: relative;
     margin-bottom: 1rem;
 }
 
@@ -381,21 +468,23 @@ button.active[data-type]:hover {
 }
 
 .image-info {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    padding: 0 2rem;
+    margin-top: 1rem;
     font-family: 'Source Sans 3', sans-serif;
     font-size: 0.9rem;
 }
 
 .image-description {
     color: white;
+    text-align: left;
 }
 
 .image-date {
     color: rgba(255, 255, 255, 0.6);
+    text-align: right;
 }
 
 /* Modal Navigation Styles */
@@ -480,7 +569,7 @@ button.active[data-type]:hover {
     justify-content: flex-start;
 }
 
-/* Tag Styles */
+/* Tag base styles */
 .tag {
     font-family: 'Space Mono', monospace;
     display: inline-block;
@@ -490,15 +579,42 @@ button.active[data-type]:hover {
     font-size: 0.9rem;
     margin-bottom: 2rem;
     background: white;
+    color: #000;
+    cursor: default;
 }
 
-/* Specific tag styles for modal writing view */
-.modal-writing .tag {
-    margin-bottom: 0.5rem;  /* Reduced from 1rem to 0.5rem */
+/* Tag colors by type - these should override the base styles */
+.tag-writing {
+    color: #fc3a68;
+    border-color: #fc3a68;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border: 1px solid;
+    border-radius: 9999px;
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
 }
 
-/* Specific tag styles for post layout */
-.post .tag {
+.tag-sound {
+    color: #0fc337 ;
+    border-color: #0fc337;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border: 1px solid;
+    border-radius: 9999px;
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+}
+
+/* Tag color for sound posts */
+.tag-video {
+    color: #2591f5;
+    border-color: #2591f5;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border: 1px solid;
+    border-radius: 9999px;
+    font-size: 0.9rem;
     margin-bottom: 2rem;
 }
 
@@ -526,10 +642,27 @@ button.active[data-type]:hover {
 }
 
 /* Tag Styles for post/modal view */
-.modal-writing .tag,
-.post .tag {
+.tag[data-type="writing"],
+.modal-writing .tag[data-type="writing"],
+.post .tag[data-type="writing"] {
     color: #fc3a68;
     border-color: #fc3a68;
+    cursor: default;
+}
+
+.tag[data-type="sound"],
+.modal-writing .tag[data-type="sound"],
+.post .tag[data-type="sound"] {
+    color: #0fc337;
+    border-color: #0fc337;
+    cursor: default;
+}
+
+.tag[data-type="video"],
+.modal-writing .tag[data-type="video"],
+.post .tag[data-type="video"] {
+    color: #2591f5;
+    border-color: #2591f5;
     cursor: default;
 }
 
@@ -544,4 +677,19 @@ button.active[data-type]:hover {
 
 .modal-writing .content p:first-child {
     margin-top: 0;
-} 
+}
+
+/* Modal Writing/Sound Styles */
+.modal-writing {
+    background: white;
+    border-radius: 8px;
+    padding: 3rem 3rem 2rem 3rem;
+}
+
+
+/* Tag color for sound posts */
+/* .modal-writing .tag[data-type="sound"],
+.post .tag[data-type="sound"] {
+    color: #0fc337;
+    border-color: #0fc337;
+} */

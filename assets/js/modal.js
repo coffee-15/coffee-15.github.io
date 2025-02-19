@@ -16,11 +16,16 @@ document.addEventListener('DOMContentLoaded', () => {
         // Clean up any existing views first
         cleanupModalViews();
         
-        if (post.dataset.types.includes('writing')) {
-            // Writing posts need the white container
+        if (post.dataset.types.includes('writing') || post.dataset.types.includes('sound')||post.dataset.types.includes('video')) {
+            // Writing and Sound posts need the white container
             modalContent.style.display = 'block';
             modalContent.innerHTML = '';
-            modalContent.appendChild(createWritingView(post));
+            modalContent.appendChild(
+                post.dataset.types.includes('writing') 
+                    ? createWritingView(post) 
+                    : createSoundView(post)
+                    , createVideoView(post)
+            );
         } else {
             // Image posts should be directly in the modal
             modalContent.style.display = 'none';
@@ -64,9 +69,69 @@ document.addEventListener('DOMContentLoaded', () => {
         const container = document.createElement('div');
         container.className = 'modal-writing';
         const content = `
-            <h1>${post.querySelector('h2').textContent}</h1>
+            <div class="writing-header">
+                <h1>${post.querySelector('h2').textContent}</h1>
+                <span class="writing-date">${post.dataset.date || ''}</span>
+            </div>
             <p class="description">${post.querySelector('p').textContent}</p>
-            <div class="tag">Writing</div>
+            <div class="tag-writing">Writing</div>
+            <div class="content">
+                ${post.dataset.content || ''}
+            </div>
+        `;
+        container.innerHTML = content;
+        
+        // Style the content images
+        container.querySelectorAll('.content img').forEach(img => {
+            img.classList.add('content-image');
+        });
+        
+        // Add short-content class if content is less than viewport height
+        setTimeout(() => {
+            if (container.offsetHeight < window.innerHeight) {
+                container.classList.add('short-content');
+            }
+        }, 0);
+        
+        return container;
+    }
+
+    function createSoundView(post) {
+        const container = document.createElement('div');
+        container.className = 'modal-writing';  // Reuse writing styles
+        const content = `
+            <div class="writing-header">
+                <h1>${post.querySelector('h2').textContent}</h1>
+                <span class="writing-date">${post.dataset.date || ''}</span>
+            </div>
+            <p class="description">${post.querySelector('p').textContent}</p>
+            <div class="tag-sound">Sound</div>
+            <div class="content">
+                ${post.dataset.content || ''}
+            </div>
+        `;
+        container.innerHTML = content;
+        
+        // Add short-content class if content is less than viewport height
+        setTimeout(() => {
+            if (container.offsetHeight < window.innerHeight) {
+                container.classList.add('short-content');
+            }
+        }, 0);
+        
+        return container;
+    }
+
+    function createVideoView(post) {
+        const container = document.createElement('div');
+        container.className = 'modal-writing';
+        const content = `
+            <div class="writing-header">
+                <h1>${post.querySelector('h2').textContent}</h1>
+                <span class="writing-date">${post.dataset.date || ''}</span>
+            </div>
+            <p class="description">${post.querySelector('p').textContent}</p>
+            <div class="tag-video">Video</div>
             <div class="content">
                 ${post.dataset.content || ''}
             </div>
@@ -89,21 +154,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function createImageView(post) {
-        // Create outer container for both image and info
         const container = document.createElement('div');
         container.className = 'modal-image';
         const img = post.querySelector('img');
         const description = post.dataset.description || '';
         const date = post.dataset.date || '';
         
-        // Don't wrap in modal-content for image view
         container.innerHTML = `
             <div class="image-container">
                 <img src="${img.src}" alt="${img.alt}">
-            </div>
-            <div class="image-info">
-                <span class="image-description">${description}</span>
-                <span class="image-date">${date}</span>
+                <div class="image-info">
+                    <span class="image-description">${description}</span>
+                    <span class="image-date">${date}</span>
+                </div>
             </div>
         `;
         return container;
