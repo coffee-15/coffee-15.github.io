@@ -8,6 +8,8 @@ layout: default
         <article class="gallery-item" 
                  data-topics="{{ post.topics | join: ' ' }}"
                  data-types="{{ post.types | join: ' ' }}"
+                 data-description="{{ post.image_description }}"
+                 data-date="{{ post.date | date: '%d.%m.%y' }}"
                  data-content="{{ post.content | escape }}">
             <div class="gallery-content">
                 {% if post.types contains 'image' %}

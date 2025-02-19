@@ -1,13 +1,16 @@
 ---
 layout: post
-title: "Blackberries"
+title: "Blueberries"
 excerpt: "They are my favourite."
-image: "/assets/images/Blackberries.jpg"
-image_description: "This is an image description."
+image: "/assets/images/Blueberries.jpg"
+image_description: "A basket of fresh blueberries."
 topics: [berries]
 types: [writing]
 ---
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+![A basket of fresh blueberries](/assets/images/Blueberries.jpg)
+
+More text continues here...
 
 Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ site.title }}</title>
-    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    <title>My Field Guide</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -12,7 +12,7 @@
 <body>
     <header class="top-nav">
         <div class="nav-content">
-            <h1><a href="{{ '/' | relative_url }}" class="site-title">{{ site.title }}</a></h1>
+            <h1><a href="/" class="site-title">My Field Guide</a></h1>
             <nav class="topic-nav">
                 <ul id="topic-filters">
                     <li><button class="topic-btn" data-topic="berries">Berries</button></li>
@@ -31,7 +31,22 @@
                 <li><button class="type-btn" data-type="video">Video</button></li>
             </ul>
         </div>
-        {{ content }}
+        <article class="gallery-item" 
+         data-topics="buildings"
+         data-types="image">
+    <div class="gallery-content">
+        
+        <img src="/assets/images/Old_House.jpg" alt="Old House">
+        
+    </div>
+</article>
+
+<script>
+    // Redirect to home page if accessed directly
+    if (!document.referrer.includes(window.location.host)) {
+        window.location.href = '/';
+    }
+</script> 
     </main>
 
     <div id="imageModal" class="modal">
@@ -43,7 +58,7 @@
         </div>
     </div>
 
-    <script src="{{ '/assets/js/filter.js' | relative_url }}"></script>
-    <script src="{{ '/assets/js/modal.js' | relative_url }}"></script>
+    <script src="/assets/js/filter.js"></script>
+    <script src="/assets/js/modal.js"></script>
 </body>
 </html> 

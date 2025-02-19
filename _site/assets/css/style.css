@@ -318,7 +318,7 @@ button.active[data-type]:hover {
 
 .modal.active {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
 }
 
@@ -333,7 +333,9 @@ button.active[data-type]:hover {
 
 /* Modal Writing Styles */
 .modal-writing {
-    padding: 3rem 3rem 2rem 3rem; /* Reduced bottom padding from 3rem to 2rem */
+    background: white;
+    border-radius: 8px;
+    padding: 3rem 3rem 2rem 3rem;
 }
 
 .modal-writing h1 {
@@ -348,40 +350,55 @@ button.active[data-type]:hover {
 }
 
 .modal-writing .tag {
-    margin-bottom: 2rem;
+    margin-bottom: 0.5rem;  /* This should control the spacing */
+}
+
+.modal-writing .content p {
+    margin-bottom: 1rem;
 }
 
 /* Modal Image Styles */
 .modal-image {
+    width: 100%;
+    max-width: 1400px;  /* Increased from 1200px */
+    margin: 0 auto;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    background: black;
-    min-height: 50vh;
+}
+
+.image-container {
+    width: 100%;
+    max-width: 1200px;  /* Max width for the actual image */
+    margin-bottom: 1rem;
 }
 
 .modal-image img {
     max-width: 100%;
-    max-height: 90vh;
+    max-height: 85vh;
     object-fit: contain;
     display: block;
 }
 
-/* Navigation buttons - keep them fixed relative to viewport */
-.modal-navigation {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translateY(-50%);
-    width: 100%;
-    max-width: 1200px; /* Match content max-width */
+.image-info {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    width: 100%;
     padding: 0 2rem;
-    pointer-events: none;
-    transform: translate(-50%, -50%); /* Center horizontally and vertically */
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.9rem;
 }
 
+.image-description {
+    color: white;
+}
+
+.image-date {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Modal Navigation Styles */
 .modal-nav {
     background: none;
     border: none;
@@ -394,15 +411,29 @@ button.active[data-type]:hover {
     transition: transform 0.2s ease;
 }
 
-.modal-nav:hover {
-    transform: translateX(-5px); /* Move left arrow left */
+/* Modal Navigation Arrows */
+.modal-nav-arrow {
+    background: none;
+    border: none;
+    color: white;
+    font-family: 'Space Mono', monospace;
+    font-size: 2rem;
+    padding: 1rem;
+    cursor: pointer;
+    pointer-events: auto;
+    transition: transform 0.2s ease;
+}
+
+.modal-nav-arrow:hover {
+    transform: translateX(-5px);
     box-shadow: none;
 }
 
-.modal-nav.next:hover {
-    transform: translateX(5px); /* Move right arrow right */
+.modal-nav-arrow.next:hover {
+    transform: translateX(5px);
 }
 
+/* Modal Close Button */
 .modal-close {
     position: fixed;
     top: 2rem;
@@ -427,6 +458,28 @@ button.active[data-type]:hover {
     box-shadow: 2px 2px 0 0 #000;
 }
 
+/* Modal Navigation Positioning */
+.modal-navigation {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 1800px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10rem;
+    pointer-events: none;
+}
+
+.modal-navigation.nav-right-only {
+    justify-content: flex-end;
+}
+
+.modal-navigation.nav-left-only {
+    justify-content: flex-start;
+}
+
 /* Tag Styles */
 .tag {
     font-family: 'Space Mono', monospace;
@@ -441,34 +494,12 @@ button.active[data-type]:hover {
 
 /* Specific tag styles for modal writing view */
 .modal-writing .tag {
-    margin-bottom: 2rem;
+    margin-bottom: 0.5rem;  /* Reduced from 1rem to 0.5rem */
 }
 
 /* Specific tag styles for post layout */
 .post .tag {
     margin-bottom: 2rem;
-}
-
-/* Modal navigation arrows */
-.modal-nav {
-    background: none;
-    border: none;
-    color: white;
-    font-family: 'Space Mono', monospace;
-    font-size: 2rem;
-    padding: 1rem;
-    cursor: pointer;
-    pointer-events: auto;
-    transition: transform 0.2s ease;
-}
-
-.modal-nav:hover {
-    transform: translateX(-5px); /* Move left arrow left */
-    box-shadow: none;
-}
-
-.modal-nav.next:hover {
-    transform: translateX(5px); /* Move right arrow right */
 }
 
 /* Post page navigation arrows */
@@ -499,6 +530,18 @@ button.active[data-type]:hover {
 .post .tag {
     color: #fc3a68;
     border-color: #fc3a68;
-    margin-bottom: 2rem;
-    cursor: default; /* Indicates non-interactive */
+    cursor: default;
+}
+
+/* Content image styles */
+.modal-writing .content img,
+.post-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1rem 0;  /* Reduced from 2rem to 1rem */
+}
+
+.modal-writing .content p:first-child {
+    margin-top: 0;
 } 

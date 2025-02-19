@@ -18,7 +18,11 @@ document.addEventListener('DOMContentLoaded', () => {
             
             const linkElement = item.closest('.gallery-item-link');
             if (linkElement) {
-                linkElement.style.display = (topicMatch && typeMatch) ? 'block' : 'none';
+                if (topicMatch && typeMatch) {
+                    linkElement.classList.remove('hidden');
+                } else {
+                    linkElement.classList.add('hidden');
+                }
             }
         });
     }

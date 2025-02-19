@@ -2,21 +2,62 @@ document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById('imageModal');
     const modalContent = modal.querySelector('.modal-content');
     const closeButton = modal.querySelector('.modal-close');
-    const prevButton = modal.querySelector('.modal-nav.prev');
-    const nextButton = modal.querySelector('.modal-nav.next');
+    const prevButton = modal.querySelector('.modal-nav-arrow.prev');
+    const nextButton = modal.querySelector('.modal-nav-arrow.next');
     
     let currentPost = null;
-    const allPosts = [...document.querySelectorAll('.gallery-item')];
+
+    function getVisiblePosts() {
+        // Update to look for non-hidden gallery-item-links instead
+        return [...document.querySelectorAll('.gallery-item-link:not(.hidden) .gallery-item')];
+    }
 
     function openModal(post) {
-        const postContent = post.dataset.types.includes('writing') ? 
-            createWritingView(post) : createImageView(post);
-            
-        modalContent.innerHTML = '';
-        modalContent.appendChild(postContent);
+        // Clean up any existing views first
+        cleanupModalViews();
+        
+        if (post.dataset.types.includes('writing')) {
+            // Writing posts need the white container
+            modalContent.style.display = 'block';
+            modalContent.innerHTML = '';
+            modalContent.appendChild(createWritingView(post));
+        } else {
+            // Image posts should be directly in the modal
+            modalContent.style.display = 'none';
+            const imageView = createImageView(post);
+            modal.insertBefore(imageView, modal.querySelector('.modal-navigation'));
+        }
+        
         modal.classList.add('active');
         currentPost = post;
         document.body.style.overflow = 'hidden';
+        updateNavigationButtons();
+    }
+
+    function updateNavigationButtons() {
+        const visiblePosts = getVisiblePosts();
+        const currentIndex = visiblePosts.indexOf(currentPost);
+        
+        // Hide/show prev button based on position
+        prevButton.style.display = currentIndex > 0 ? 'block' : 'none';
+        
+        // Hide/show next button based on position
+        nextButton.style.display = currentIndex < visiblePosts.length - 1 ? 'block' : 'none';
+
+        // Update navigation button positions
+        const modalNavigation = modal.querySelector('.modal-navigation');
+        if (currentIndex === 0) {
+            // Only next items available - align navigation to right
+            modalNavigation.classList.add('nav-right-only');
+            modalNavigation.classList.remove('nav-left-only');
+        } else if (currentIndex === visiblePosts.length - 1) {
+            // Only previous items available - align navigation to left
+            modalNavigation.classList.add('nav-left-only');
+            modalNavigation.classList.remove('nav-right-only');
+        } else {
+            // Items on both sides - reset to default
+            modalNavigation.classList.remove('nav-right-only', 'nav-left-only');
+        }
     }
 
     function createWritingView(post) {
@@ -26,9 +67,16 @@ document.addEventListener('DOMContentLoaded', () => {
             <h1>${post.querySelector('h2').textContent}</h1>
             <p class="description">${post.querySelector('p').textContent}</p>
             <div class="tag">Writing</div>
-            <div class="content">${post.dataset.content || ''}</div>
+            <div class="content">
+                ${post.dataset.content || ''}
+            </div>
         `;
         container.innerHTML = content;
+        
+        // Style the content images
+        container.querySelectorAll('.content img').forEach(img => {
+            img.classList.add('content-image');
+        });
         
         // Add short-content class if content is less than viewport height
         setTimeout(() => {
@@ -41,25 +89,51 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function createImageView(post) {
+        // Create outer container for both image and info
         const container = document.createElement('div');
         container.className = 'modal-image';
         const img = post.querySelector('img');
-        container.innerHTML = `<img src="${img.src}" alt="${img.alt}">`;
+        const description = post.dataset.description || '';
+        const date = post.dataset.date || '';
+        
+        // Don't wrap in modal-content for image view
+        container.innerHTML = `
+            <div class="image-container">
+                <img src="${img.src}" alt="${img.alt}">
+            </div>
+            <div class="image-info">
+                <span class="image-description">${description}</span>
+                <span class="image-date">${date}</span>
+            </div>
+        `;
         return container;
+    }
+
+    function cleanupModalViews() {
+        // Clean up any direct image views
+        const imageView = modal.querySelector('.modal-image');
+        if (imageView) {
+            imageView.remove();
+        }
+        // Reset modal content
+        modalContent.innerHTML = '';
+        modalContent.style.display = 'block';
     }
 
     function closeModal() {
         modal.classList.remove('active');
         currentPost = null;
         document.body.style.overflow = '';
+        cleanupModalViews();
     }
 
     function navigateModal(direction) {
-        const currentIndex = allPosts.indexOf(currentPost);
+        const visiblePosts = getVisiblePosts();
+        const currentIndex = visiblePosts.indexOf(currentPost);
         const newIndex = currentIndex + direction;
         
-        if (newIndex >= 0 && newIndex < allPosts.length) {
-            const newPost = allPosts[newIndex];
+        if (newIndex >= 0 && newIndex < visiblePosts.length) {
+            const newPost = visiblePosts[newIndex];
             openModal(newPost);
         }
     }
@@ -69,6 +143,20 @@ document.addEventListener('DOMContentLoaded', () => {
         post.addEventListener('click', (e) => {
             e.preventDefault();
             openModal(post.querySelector('.gallery-item'));
+        });
+    });
+
+    // Update navigation when filters change
+    document.querySelectorAll('.type-btn, .topic-btn').forEach(button => {
+        button.addEventListener('click', () => {
+            if (modal.classList.contains('active')) {
+                // Check if the parent link is hidden instead of the gallery-item
+                if (currentPost.closest('.gallery-item-link').classList.contains('hidden')) {
+                    closeModal();
+                } else {
+                    updateNavigationButtons();
+                }
+            }
         });
     });
 
