@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Field Guide</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="top-nav">
+        <div class="nav-content">
+            <h1><a href="/" class="site-title">My Field Guide</a></h1>
+            <nav class="topic-nav">
+                <ul id="topic-filters">
+                    <li><button class="topic-btn" data-topic="berries">Berries</button></li>
+                    <li><button class="topic-btn" data-topic="buildings">Buildings</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="content">
+        <div class="type-filters">
+            <ul id="type-filters">
+                <li><button class="type-btn" data-type="writing">Writing</button></li>
+                <li><button class="type-btn" data-type="image">Image</button></li>
+                <li><button class="type-btn" data-type="sound">Sound</button></li>
+                <li><button class="type-btn" data-type="video">Video</button></li>
+            </ul>
+        </div>
+        <div class="modal-writing">
+    <h1>Blackberries</h1>
+    <p class="description">They are my favourite.</p>
+    
+    <div class="tag">Writing</div>
+    
+    <div class="content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+    </div>
+</div>
+
+<script>
+    // Redirect image posts back to home and open modal
+    window.location.href = '/#blackberries';
+</script> 
+    </main>
+
+    <div id="imageModal" class="modal">
+        <button class="modal-close">&times;</button>
+        <div class="modal-content"></div>
+        <div class="modal-navigation">
+            <button class="modal-nav prev">&larr;</button>
+            <button class="modal-nav next">&rarr;</button>
+        </div>
+    </div>
+
+    <script src="/assets/js/filter.js"></script>
+    <script src="/assets/js/modal.js"></script>
+</body>
+</html> 
