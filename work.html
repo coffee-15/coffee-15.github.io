@@ -1,0 +1,48 @@
+---
+title: Our Games
+layout: default
+---
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/assets/css/work.css">
+
+</head>
+
+
+<body>
+  <div class="page">
+    <div class="content">
+      <h1>Our Games</h1>
+      <div class="filters">
+        <button data-filter="all" class="filter active">all</button>
+        <button data-filter="environmental" class="filter">environmental</button>
+        <button data-filter="social" class="filter">social</button>
+      </div>
+
+      <div class="work-grid">
+        {% for post in site.posts %}
+        {% if post.category == 'work' %}
+        <div class="post-card" data-tag="{{ post.tag | downcase }}">
+          <a href="{{ post.url }}" class="post-image-link">
+            <img src="{{ post.cover-image }}" alt="{{ post.title }}">
+          </a>
+          <div class="post-meta">
+            <a href="{{ post.url }}" class="post-title">{{ post.title }}</a>
+            <span class="post-tag">{{ post.type }}</span>
+          </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+      </div>
+
+      <a class="home-button" href="/">
+        <img src="/assets/Home_MedRes.png" alt="Home">
+      </a>
+    </div>
+</body>
+
+</html>

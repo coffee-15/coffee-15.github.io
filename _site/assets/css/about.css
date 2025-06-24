@@ -1,0 +1,99 @@
+@font-face {
+    font-family: 'terminal_grotesque';
+    src: url('/assets/TerminalGrotesque/terminal-grotesque-webfont.eot');
+    src: url('/assets/TerminalGrotesque/terminal-grotesque-webfont.eot?#iefix') format('embedded-opentype'),
+        url('/assets/TerminalGrotesque/terminal-grotesque-webfont.woff2') format('woff2'),
+        url('/assets/TerminalGrotesque/terminal-grotesque-webfont.woff') format('woff'),
+        url('/assets/TerminalGrotesque/terminal-grotesque-webfont.ttf') format('truetype'),
+        url('/assets/TerminalGrotesque/terminal-grotesque-webfont.svg#terminal_grotesqueregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --tomato: #ff4027;
+    --cream: #fdefdd;
+    --black: #000000;
+    --baseline: 16px;
+    --columns: 12;
+    --gutter: 16px;
+    --margin: 40px;
+}
+
+html{
+    background-color: var(--tomato);
+}
+
+body {
+    margin: 0;
+    font-family: 'elza text', sans-serif;
+    background: var(--tomato);
+    color: black;
+    font-size: 1.4rem;
+    line-height: normal;
+}
+
+.callout-about {
+    font-family: "plantin", serif;
+    font-style: normal;
+    font-size: 36px;
+    line-height: 88.2%;
+    letter-spacing: -5%;
+    color: var(--cream);
+    padding-top: calc(var(--baseline)*4);
+    font-style: normal;
+}
+
+.email-us{
+    color: var(--cream);
+    font-family: 'terminal_grotesque';
+    font-size: 7rem;
+    padding-bottom: 64px;
+}
+
+.email-us img{
+    display: inline;
+    height: 78px;
+    width: auto;
+    padding-left: 36px;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px 16px;
+    padding-bottom: 80px;
+}
+
+.about-card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    width: 100%;
+    overflow: hidden;
+}
+
+.about-card .desc{
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    padding: 16px;
+    margin: 0%;
+    border: none;
+    margin-bottom: -16px;
+}
+
+.about-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-bottom: 1px solid black;
+}
+
+.about-card .desc h2 {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    padding: 0%;
+    margin: 0%;
+    margin-bottom: -10px;
+    font-weight: 500;
+}

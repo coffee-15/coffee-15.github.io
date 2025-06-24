@@ -1,0 +1,118 @@
+@font-face {
+    font-family: 'terminal_grotesque';
+    src: url('/assets/TerminalGrotesque/terminal-grotesque-webfont.eot');
+    src: url('/assets/TerminalGrotesque/terminal-grotesque-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/TerminalGrotesque/terminal-grotesque-webfont.woff2') format('woff2'),
+         url('/assets/TerminalGrotesque/terminal-grotesque-webfont.woff') format('woff'),
+         url('/assets/TerminalGrotesque/terminal-grotesque-webfont.ttf') format('truetype'),
+         url('/assets/TerminalGrotesque/terminal-grotesque-webfont.svg#terminal_grotesqueregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+  --tomato: #ff4027;
+  --cream: #fdefdd;
+  --black: #000000;
+  --baseline: 16px;
+  --columns: 12;
+  --gutter: 16px;
+  --margin: 40px;
+}
+
+
+body {
+  margin: 0;
+  font-family: 'elza text', sans-serif;
+  background: var(--tomato);
+  color: black;
+}
+
+.container {
+  padding: 2rem;
+}
+
+.posts {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.post-card {
+  display: flex;
+  border: 1px solid black;
+  background: var(--tomato);
+  overflow: hidden;
+  grid-column: 4 / 10;
+}
+
+.post-text {
+  display: block;
+  width: 70%;
+  font-size: 1.2rem;
+  margin-right: 0%;
+  padding: 16px;
+}
+
+.post-text a {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #000;
+  text-decoration: none;
+  margin: 0;
+}
+
+.post-text a:hover{
+  text-decoration: underline;
+}
+
+.post-meta{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0rem;
+  padding: 0%;
+}
+
+.meta {
+  color: black;
+  text-decoration: underline;
+  font-weight: normal;
+  font-size: 1.2rem;
+    padding: 0%;
+    margin: 0%;
+}
+
+.meta a{
+    color: black;
+  text-decoration: underline;
+  font-weight: normal;
+  font-size: 1.2rem;
+}
+
+.date {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.post-images {
+  width: 30%;
+  display: flex;
+  margin: 0%;
+  padding: 0%;
+}
+
+.post-images img {
+    width: 50%;
+  object-fit: cover;
+  height:auto;
+  border-left: 1px solid black;
+}
+
+.post-images > * {
+  flex: 1;
+  background: transparent;
+    border-left: 1px solid black;
+}
