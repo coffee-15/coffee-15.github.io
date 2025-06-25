@@ -135,13 +135,6 @@ body {
   font-style: normal;
 }
 
-.content-container {
-  position: relative;
-  margin-left: 100px;
-  height: 100vh;
-  overflow: hidden;
-}
-
 .sidebar button:hover {
   text-decoration: underline;
 }
@@ -225,16 +218,6 @@ body {
   background-color: var(--tomato);
   min-height: 100vh;
   color: #000000;
-
-  top: 0;
-  right: -100%;
-  width: calc(100vw - 100px);
-  transition: right 0.6s ease-in-out;
-  z-index: 5;
-}
-
-.page.active {
-  right: 0;
 }
 
 .content {
