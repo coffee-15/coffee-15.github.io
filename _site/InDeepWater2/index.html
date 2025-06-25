@@ -36,9 +36,78 @@
 
 
   <div class="sidebar">
-  <button onclick="location.href='/work'">WORK</button>
+  <button class="button"data-page="work">WORK</button>
   <button onclick="location.href='/blog'">BLOG</button>
   <button onclick="location.href='/about'">ABOUT</button>
+</div>
+
+<div class="content-container">
+  <div class="page" id="work">
+    <div class="content">
+      <h1>Our Games</h1>
+      <div class="filters">
+        <button data-filter="all" class="filter active">all</button>
+        <button data-filter="environmental" class="filter">environmental</button>
+        <button data-filter="social" class="filter">social</button>
+      </div>
+
+      <div class="work-grid">
+        
+        
+        <div class="post-card" data-tag="environmental">
+          <a href="/InDeepWater/" class="post-image-link">
+            <img src="/assets/Pictures/InDeepWatersCover.png" alt="In Deep Water Filled">
+          </a>
+          <div class="post-meta">
+            <a href="/InDeepWater/" class="post-title">In Deep Water Filled</a>
+            <span class="post-tag">prototype</span>
+          </div>
+        </div>
+        
+        
+        
+        <div class="post-card" data-tag="environmental, social">
+          <a href="/InDeepWater2/" class="post-image-link">
+            <img src="/assets/Pictures/InDeepWatersCover.png" alt="In Deep Water">
+          </a>
+          <div class="post-meta">
+            <a href="/InDeepWater2/" class="post-title">In Deep Water</a>
+            <span class="post-tag">prototype</span>
+          </div>
+        </div>
+        
+        
+        
+        <div class="post-card" data-tag="social">
+          <a href="/work/2025/01/18/post.html" class="post-image-link">
+            <img src="/assets/Pictures/InDeepWatersCover.png" alt="Node Mapper">
+          </a>
+          <div class="post-meta">
+            <a href="/work/2025/01/18/post.html" class="post-title">Node Mapper</a>
+            <span class="post-tag">prototype</span>
+          </div>
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        <div class="post-card" data-tag="social">
+          <a href="/work/2002/06/18/post.html" class="post-image-link">
+            <img src="/assets/Pictures/MyDreamPC.png" alt="My Dream PC">
+          </a>
+          <div class="post-meta">
+            <a href="/work/2002/06/18/post.html" class="post-title">My Dream PC</a>
+            <span class="post-tag">game</span>
+          </div>
+        </div>
+        
+        
+      </div>
+    </div>
+  </div>
 </div>
 
 </body>

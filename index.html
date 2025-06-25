@@ -5,22 +5,28 @@ layout: default
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Games of Consequence</title>
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="https://use.typekit.net/wcl0try.css">
-  
+
 </head>
+
 <body>
+
+  <canvas id="canvas"></canvas>
+  <script src="{{ '/assets/js/pixelate.js' | relative_url }}"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
   <div class="title">
     <div class="black">Games of</div>
     <div class="red indented-1">Con</div>
     <div class="red indented-2">se</div>
     <div class="red indented-3">quence</div>
-</div>
+  </div>
 
   <div class="grid">
     <div class="callout">
@@ -29,12 +35,9 @@ layout: default
     </div>
   </div>
 
-  <div class="sidebar">
-    <button>WORK</button>
-    <button>BLOG</button>
-    <button>ABOUT</button>
-  </div>
-
+  <a class="home-button" href="/">
+    <img src="/assets/Home_MedRes.png" alt="Home">
+  </a>
 </body>
 
 </html>
