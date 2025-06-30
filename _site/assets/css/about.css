@@ -20,7 +20,7 @@
     --margin: 40px;
 }
 
-html{
+html {
     background-color: var(--tomato);
 }
 
@@ -44,25 +44,73 @@ body {
     font-style: normal;
 }
 
-.email-us{
+@media (max-width:768px) {
+    .callout-about {
+        font-size: 1.6rem;
+        padding-top: calc(var(--baseline)*3);
+    }
+}
+
+.email-us {
     color: var(--cream);
     font-family: 'terminal_grotesque';
     font-size: 7rem;
     padding-bottom: 64px;
+    text-decoration: none;
 }
 
-.email-us img{
+.email-us:hover {
+    text-decoration: underline;
+}
+
+@media (max-width:768px) {
+    .email-us {
+        position: relative;
+        top: calc(var(--baseline) * 1);
+        color: var(--cream);
+        font-size: 5rem;
+        margin-bottom: calc(var(--baseline)*3);
+        line-height: 88.2%;
+    }
+}
+
+
+@media (max-width: 768px){
+    .content p{
+        font-size: 1.2rem;
+    }
+
+}
+
+.email-us img {
     display: inline;
     height: 78px;
     width: auto;
     padding-left: 36px;
 }
 
+@media (max-width:768px) {
+    .email-us img {
+        display: inline;
+        height: 48px;
+        width: auto;
+        padding-left: 24px;
+    }
+}
+
+
 .about-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 32px 16px;
     padding-bottom: 80px;
+}
+
+@media (max-width: 768px) {
+    .about-grid {
+        grid-template-columns: repeat(2, 1fr);
+        padding-bottom: calc(var(--baseline)*3);
+    }
 }
 
 .about-card {
@@ -73,7 +121,7 @@ body {
     overflow: hidden;
 }
 
-.about-card .desc{
+.about-card .desc {
     font-size: 1.2rem;
     text-transform: capitalize;
     padding: 16px;
@@ -96,4 +144,15 @@ body {
     margin: 0%;
     margin-bottom: -10px;
     font-weight: 500;
+}
+
+@media (max-width:768px){
+    .about-card .desc h2 {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    padding: 0%;
+    margin: 0%;
+    margin-bottom: -10px;
+    font-weight: 500;
+}
 }

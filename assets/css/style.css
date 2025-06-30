@@ -343,6 +343,16 @@ h1 {
   font-weight: normal;
 }
 
+@media (max-width: 768px){
+    h1 {
+    position: relative;
+    top: calc(var(--baseline) * 1);
+    color: var(--cream);
+    font-size: 7rem;
+    margin-bottom: 0px;
+  }
+}
+
 /* Old Canvas with pixel
 canvas {
   image-rendering: optimizeSpeed;
