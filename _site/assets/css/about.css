@@ -44,7 +44,7 @@ body {
     font-style: normal;
 }
 
-@media (max-width:768px) {
+@media (max-width:767px) {
     .callout-about {
         font-size: 1.6rem;
         padding-top: calc(var(--baseline)*3);
@@ -63,7 +63,7 @@ body {
     text-decoration: underline;
 }
 
-@media (max-width:768px) {
+@media (max-width:767px) {
     .email-us {
         position: relative;
         top: calc(var(--baseline) * 1);
@@ -75,7 +75,7 @@ body {
 }
 
 
-@media (max-width: 768px){
+@media (max-width: 767px){
     .content p{
         font-size: 1.2rem;
     }
@@ -89,7 +89,7 @@ body {
     padding-left: 36px;
 }
 
-@media (max-width:768px) {
+@media (max-width:767px) {
     .email-us img {
         display: inline;
         height: 48px;
@@ -106,7 +106,7 @@ body {
     padding-bottom: 80px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .about-grid {
         grid-template-columns: repeat(2, 1fr);
         padding-bottom: calc(var(--baseline)*3);
@@ -146,7 +146,7 @@ body {
     font-weight: 500;
 }
 
-@media (max-width:768px){
+@media (max-width:767px){
     .about-card .desc h2 {
     font-size: 1.4rem;
     text-transform: uppercase;

@@ -44,7 +44,7 @@ h1 {
   font-weight: normal;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   h1 {
     position: relative;
     top: calc(var(--baseline) * 1);
@@ -64,7 +64,7 @@ h1 {
   gap: 32px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .posts {
     display: flex;
     flex-direction: column;
@@ -80,7 +80,7 @@ h1 {
   grid-column: 4 / 10;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .post-card {
     display: flex;
     border: 1px solid black;
@@ -99,7 +99,7 @@ h1 {
   padding: 16px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .post-text {
     width: 100%;
     margin-right: 0%;
@@ -107,8 +107,8 @@ h1 {
   }
 }
 
-@media (max-width: 768px) {
-  .post-text p{
+@media (max-width: 767px) {
+  .post-text p {
     font-size: 1.2rem;
   }
 }
@@ -165,7 +165,7 @@ h1 {
   padding: 0%;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .post-images {
     width: 0%;
     display: flex;

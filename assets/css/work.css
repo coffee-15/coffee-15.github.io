@@ -47,7 +47,7 @@ body {
   color: #000000;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .page {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -57,7 +57,7 @@ body {
   grid-column: 2 / 12;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .content {
     grid-column: 1 / 5;
   }
@@ -76,7 +76,7 @@ h1 {
   font-weight: normal;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   h1 {
     position: relative;
     top: calc(var(--baseline) * 1);
@@ -93,10 +93,19 @@ h1 {
   padding-bottom: 64px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .work-grid {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
+    gap: 32px 16px;
+    padding-bottom: 64px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .work-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 32px 16px;
     padding-bottom: 64px;
   }
