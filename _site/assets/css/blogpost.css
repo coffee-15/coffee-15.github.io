@@ -36,6 +36,16 @@ body {
     position: relative;
 }
 
+@media (max-width: 768px) {
+    .content {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: var(--gutter);
+        margin: 0 var(--margin);
+        position: relative;
+    }
+}
+
 /* Post Content */
 .post-content {
     grid-column: 4 / 10;
@@ -44,6 +54,18 @@ body {
     font-family: 'elza text', sans-serif;
     font-size: 1.2rem;
     font-weight: 300;
+}
+
+@media (max-width: 768px) {
+    .post-content {
+        grid-column: 1 / 5;
+    }
+}
+
+@media (max-width: 768px) {
+    .post-content p {
+        font-size: 1.2rem;
+    }
 }
 
 .post-content h2 {
@@ -56,6 +78,12 @@ body {
     font-size: 1.8rem;
 }
 
+@media (max-width: 768px) {
+    .post-content h2 {
+        font-size: 1.6rem;
+    }
+}
+
 .post-title {
     color: var(--tomato);
     margin-bottom: 5rem;
@@ -65,7 +93,13 @@ body {
     font-weight: normal;
 }
 
-.date{
+@media (max-width: 768px) {
+    .post-title {
+        font-size: 5rem;
+    }
+}
+
+.date {
     color: var(--tomato);
     font-size: 1.2rem;
     font-weight: 500;

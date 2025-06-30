@@ -27,6 +27,12 @@ body {
   background-image: none;
 }
 
+@media (max-width: 768px){
+  html,body{
+    font-size: 1rem;
+  }
+}
+
 /* Fullscreen Hero Section */
 .post-hero {
   position: relative;
@@ -52,6 +58,13 @@ body {
   height: 100vh;
 }
 
+@media (max-width: 768px) {
+  .content {
+    grid-template-columns: repeat(4, 1fr);
+    font-size: 1rem;
+  }
+}
+
 /* Post Content */
 .post-content {
   grid-column: 4 / 10;
@@ -62,6 +75,17 @@ body {
   font-weight: 300;
 }
 
+@media (max-width: 768px) {
+  .post-content {
+    grid-column: 1 / 5;
+  }
+}
+
+@media (max-width: 768px) {
+  .post-content p{
+    font-size: 1.2rem;
+  }
+}
 .post-content h2 {
   color: var(--tomato);
   line-height: 88.2%;
@@ -80,6 +104,18 @@ body {
   font-family: "terminal_grotesque";
   font-weight: normal;
 }
+
+@media (max-width: 768px) {
+  .post-title {
+    margin-bottom: 5rem;
+    font-size: 5rem;
+    line-height: 80%;
+    font-family: "terminal_grotesque";
+    font-weight: normal;
+    position:relative;
+  }
+}
+
 
 .post-content img {
   width: 100%;

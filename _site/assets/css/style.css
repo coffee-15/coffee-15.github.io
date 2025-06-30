@@ -245,7 +245,7 @@ body {
 @media (max-width: 768px) {
   .home-button {
     bottom: 60px;
-    right: 40px;
+    right: 16px;
     width: 64px;
   }
 }
@@ -277,6 +277,14 @@ body {
   padding-bottom: 52px;
 }
 
+@media (max-width: 768px) {
+  .filters .filter {
+    font-size: 1.6rem;
+    line-height: 0;
+    margin-right: 0px;
+  }
+}
+
 .filters .filter.active,
 .filters .filter:hover {
   text-decoration: underline;
@@ -294,8 +302,28 @@ body {
   color: #000000;
 }
 
+@media (max-width: 768px) {
+  .page {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: var(--gutter);
+    margin: 0 var(--margin);
+    position: absolute;
+    height: 100%;
+    background-color: var(--tomato);
+    min-height: 100vh;
+    color: #000000;
+  }
+}
+
 .content {
   grid-column: 2 / 12;
+}
+
+@media (max-width: 768px) {
+  .content {
+  grid-column: 1 / 5;
+}
 }
 
 .content p {
