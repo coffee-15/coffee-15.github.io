@@ -324,6 +324,7 @@ body {
   color: var(--cream);
   cursor: pointer;
   padding-bottom: 52px;
+      font-weight: 300;
 }
 
 @media (max-width: 767px) {

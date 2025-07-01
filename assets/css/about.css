@@ -30,17 +30,18 @@ body {
     background: var(--tomato);
     color: black;
     font-size: 1.4rem;
-    line-height: normal;
+    line-height: 140%
 }
 
 .callout-about {
-    font-family: "plantin", serif;
-    font-style: normal;
     font-size: 36px;
     line-height: 88.2%;
     letter-spacing: -5%;
     color: var(--cream);
     padding-top: calc(var(--baseline)*4);
+
+    font-family: "plantin", sans-serif;
+    font-weight: 300;
     font-style: normal;
 }
 
@@ -75,8 +76,8 @@ body {
 }
 
 
-@media (max-width: 767px){
-    .content p{
+@media (max-width: 767px) {
+    .content p {
         font-size: 1.2rem;
     }
 
@@ -146,13 +147,13 @@ body {
     font-weight: 500;
 }
 
-@media (max-width:767px){
+@media (max-width:767px) {
     .about-card .desc h2 {
-    font-size: 1.4rem;
-    text-transform: uppercase;
-    padding: 0%;
-    margin: 0%;
-    margin-bottom: -10px;
-    font-weight: 500;
-}
+        font-size: 1.4rem;
+        text-transform: uppercase;
+        padding: 0%;
+        margin: 0%;
+        margin-bottom: -10px;
+        font-weight: 500;
+    }
 }
