@@ -1,42 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>{{ page.title | default: site.title }}</title>
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="stylesheet" href="/assets/css/workpost.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/workpost.css">
   <link rel="stylesheet" href="https://use.typekit.net/wcl0try.css">
 </head>
+
 <body>
   <!-- Fullscreen Hero Section -->
   <header class="post-hero">
     {% if page.media contains ".mp4" %}
-      <video src="{{ page.media | relative_url }}" autoplay muted loop></video>
+    <video src="{{ page.media | relative_url }}" autoplay muted loop></video>
     {% else %}
-      <img src="{{ page.media | relative_url }}" alt="{{ page.title }}">
+    <img src="{{ page.media | relative_url }}" alt="{{ page.title }}">
     {% endif %}
   </header>
 
   <!-- Main Post Content -->
-  <main class="content">
-    <div class="post-content">
-    <h1 class="post-title">{{ page.title }}</h1>
-    {{ content }}
-    <div class="post-tags">
-      {% for tag in page.tags %}
-        <a href="#" class="tag">{{ tag }}</a>
-      {% endfor %}
+  <main>
+    <div class="content">
+      <div class="post-content">
+        <br>
+        <h1 class="post-title">{{ page.title }}</h1><br>
+        {{ content }}
+        <div class="post-tags">
+          {% for tag in page.tags %}
+          <a href="#" class="tag">{{ tag }}</a>
+          {% endfor %}
+        </div>
+      </div>
     </div>
-  </div>
 
-<a class="home-button" href="/work">
-    <img src="/assets/Home_MedRes_red.png" alt="Home">
-  </a>
+    <a class="home-button" href="/work">
+      <img src="/assets/Home_MedRes_red.png" alt="Home">
+    </a>
 
   </main>
-
 
   {% include sidebar.html %}
 
 </body>
+
 </html>
