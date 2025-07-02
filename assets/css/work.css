@@ -88,7 +88,7 @@ h1 {
 
 .work-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 32px 16px;
   padding-bottom: 64px;
 }

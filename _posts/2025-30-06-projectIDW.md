@@ -4,7 +4,7 @@ category: work
 date: 2025-06-18
 type: video game
 cover-image: /assets/Pictures/InDeepWatersCover.png
-permalink: /ProjectInDeepWater/
+permalink: /InDeepWater/
 tag: "environmental"
 layout: post
 media:  /assets/Pictures/InDeepWatersCover.png

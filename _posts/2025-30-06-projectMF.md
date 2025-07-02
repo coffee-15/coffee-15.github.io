@@ -1,10 +1,10 @@
 ---
-title: MetaForest
+title: Meta&shy;Forest
 category: work
 date: 2025-06-18
 type: installation
 cover-image: /assets/Pictures/Meta3.png
-permalink: /ProjectMetaForest/
+permalink: /MetaForest/
 tag: "environmental"
 layout: post
 media:  /assets/Pictures/Meta4.png

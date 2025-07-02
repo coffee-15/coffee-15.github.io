@@ -12,20 +12,27 @@ html,
 body {
   background-color: var(--cream);
   background-image: none;
+  width: 100%;
 }
 
-/* Fullscreen Hero Section */
+main {
+  display: block;
+  width: 100%;
+}
+
 .post-hero {
-  position:relative;
-  height: 100vh;
+  position: relative;
+  height: auto;
   width: 100%;
   overflow: hidden;
+  display: block;
 }
 
-@media (max-width: 767px){
-  .post-hero{
+
+@media (max-width: 767px) {
+  .post-hero {
     height: auto;
-    width: 100vw;
+    /* let height adjust to image */
   }
 }
 
@@ -33,8 +40,20 @@ body {
 .post-hero video {
   width: 100%;
   height: 100%;
+  max-width: 100%;
   object-fit: cover;
   display: block;
+}
+
+@media (max-width: 767px) {
+
+  .post-hero img,
+  .post-hero video {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+
+  }
 }
 
 
@@ -58,12 +77,11 @@ body {
   }
 }
 
-
-
 /* Post Content */
 .post-content {
   grid-column: 4 / 10;
   padding: 0 1.5rem;
+
   line-height: 1.6;
   font-family: 'elza text', sans-serif;
   font-size: 1.2rem;
@@ -73,17 +91,16 @@ body {
 @media (max-width: 767px) {
   .post-content {
     grid-column: 1 / 5;
+    padding-left: 0rem;
+    padding-right: 0rem;
   }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
   .post-content {
     grid-column: 2 / 12;
+    font-size: 1.2rem;
   }
-}
-
-.post-content p {
-  font-size: 1.2rem;
 }
 
 .post-content h2 {
@@ -107,12 +124,17 @@ body {
 
 @media (max-width: 767px) {
   .post-title {
-    margin-bottom: 5rem;
+    margin-bottom: 1rem;
     font-size: 5rem;
     line-height: 80%;
     font-family: "terminal_grotesque";
     font-weight: normal;
     position: relative;
+    word-wrap: break-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
   }
 }
 
