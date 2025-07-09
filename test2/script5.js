@@ -7,7 +7,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   const pixelSize = 40;
   const radius = 120;
-  const trailLength = 20;
+  const trailLength = 25;
   const trail = [];
 
   let mouseX = -100;

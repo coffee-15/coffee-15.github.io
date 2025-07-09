@@ -38,6 +38,8 @@ body {
   font-feature-settings: "ss01";
   font-variant-alternates: stylistic(s01);
   color: black;
+  overflow: hidden;
+  height: 100%;
 }
 
 .grid {
@@ -418,6 +420,8 @@ canvas {
   display: block;
   width: 100vw;
   height: 100vh;
-  position: absolute;
-  background: brown;
+  position: fixed;
+  background: none;
+  top: 0;
+  left: 0;
 }
