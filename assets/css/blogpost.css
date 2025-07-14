@@ -129,28 +129,15 @@ font-size: 1.2rem;
 }
 .row-blog{
       display: flex;
-      outline: #ff4027;
 }
 
 .column-blog{
   flex: 50%;
-  background-color: gray;
-  border: 1px solid white;
+  padding: 1rem;
 }
 
 @media screen and (max-width: 600px) {
   .column-blog {
     width: 100%;
   }
-}
-
-.custom-table th, .custom-table td {
-   padding: 1px;
-}
-
-.custom-table, .custom-table p{
-    padding: 1rem;
-    margin: auto;
-    background-color: green;
-    border: 1px solid pink;
 }
