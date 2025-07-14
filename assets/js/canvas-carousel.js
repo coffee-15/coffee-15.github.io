@@ -31,18 +31,33 @@ document.addEventListener("mousemove", (e) => {
 });
 
 function drawPixelatedBackground(img, offsetX = 0) {
+  const scale = Math.max(canvasWidth / img.width, canvasHeight / img.height);
+  const sw = img.width * scale;
+  const sh = img.height * scale;
+
+  const sx = offsetX + (canvasWidth - sw) / 2;
+  const sy = (canvasHeight - sh) / 2;
+
+  // Create low-res offscreen canvas
   const scaleCanvas = document.createElement("canvas");
   const scaleCtx = scaleCanvas.getContext("2d");
 
-  const sw = canvasWidth / pixelSize;
-  const sh = canvasHeight / pixelSize;
-  scaleCanvas.width = sw;
-  scaleCanvas.height = sh;
+  const pixelWidth = Math.ceil(sw / pixelSize);
+  const pixelHeight = Math.ceil(sh / pixelSize);
+  scaleCanvas.width = pixelWidth;
+  scaleCanvas.height = pixelHeight;
 
-  scaleCtx.drawImage(img, 0, 0, sw, sh);
+  // Downscale image with the same aspect ratio
+  scaleCtx.drawImage(img, 0, 0, pixelWidth, pixelHeight);
 
   ctx.imageSmoothingEnabled = false;
-  ctx.drawImage(scaleCanvas, 0, 0, sw, sh, offsetX, 0, canvasWidth, canvasHeight);
+
+  // Draw the upscaled low-res image, aligned the same way
+  ctx.drawImage(
+    scaleCanvas,
+    0, 0, pixelWidth, pixelHeight,
+    sx, sy, sw, sh
+  );
 }
 
 function drawCleanTrail(img, offsetX = 0) {
@@ -87,7 +102,10 @@ function drawCleanTrail(img, offsetX = 0) {
 
 
 function animate(time) {
-  ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+    ctx.fillStyle = "#000"; // fill black background to avoid flashing
+    ctx.fillRect(0, 0, canvasWidth, canvasHeight);
+
+  //ctx.clearRect(0, 0, canvasWidth, canvasHeight);
 
   if (isSliding) {
     const elapsed = time - slideStartTime;
