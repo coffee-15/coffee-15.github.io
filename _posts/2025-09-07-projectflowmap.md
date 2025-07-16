@@ -9,7 +9,7 @@ tag: "business"
 layout: post
 media:  /assets/Pictures/flowmap1.png
 ---
-The Flow Map Tool is designed to give a bird's-eye visualisation of a hyper specific ecosystem of businesses and flow types. It was custom created for the ReShaping the Plastics NZ Ecosystem project.
+The Flow Map tool is designed to give a bird's-eye visualisation of a hyper specific ecosystem of businesses and flow types. It was custom created for the ReShaping the Plastics NZ Ecosystem project.
 
 Rather than viewing static images of graphs and numbers the Flow Map tool populates and displays information through visually pleasing animation and user interfaces. Various flow types between stakeholders can be customised and filtered including materials (red), services (yellow), finances (blue), and data (green). 
 
