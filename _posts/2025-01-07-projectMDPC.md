@@ -13,7 +13,7 @@ Created in response to personal computer building cultures which typically centr
 
 Looping lo-fi beats accompany players as they peruse a library of candy-coloured, kawaii-inspired assets for their PC creations. Designed as a pleasant invitation to anyone wanting to build by relying on simple game controls, basic progression through object customisation and placement mechanics, and no requirement for prior technical knowledge.
 
-The game seeks to bridge gaps between traditional masculine hobbies and feminine design to encourage a more diverse community of practice in the cultural ecosystems of PC building.
+The game seeks to bridge gaps between traditional masculine hobbies and feminine design by providing an accessible play space free from financial and gendered barriers in the hopes of encouraging a more diverse community of practice in the cultural ecosystems of PC building.
 
 ## A cosy game installation
 
