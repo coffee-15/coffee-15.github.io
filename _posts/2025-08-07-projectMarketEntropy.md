@@ -3,8 +3,8 @@ title: Market Entropy
 category: work
 date: 2025-06-18
 type: tabletop game
-cover-image: /assets/Pictures/me1.jpg
-permalink: /ProjectInDeepWater/
+cover-image: /assets/Pictures/me1_169.png
+permalink: /ProjectMarketEntropy/
 tag: "business"
 layout: post
 media:  /assets/Pictures/me1.jpg

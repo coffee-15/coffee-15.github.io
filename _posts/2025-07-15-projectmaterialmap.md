@@ -3,11 +3,11 @@ title: Material Map
 category: work
 date: 2025-06-18
 type: interactive tool
-cover-image: /assets/Pictures/materialmap1.png
+cover-image: /assets/Pictures/MaterialMap_1.png
 permalink: /ProjectMaterialMap/
 tag: "business"
 layout: post
-media:  /assets/Pictures/materialmap1.png
+media:  /assets/Pictures/MaterialMap_1.png
 ---
 The Material Map tool is a factory simulator which gives stakeholders the ability to map out their role within the plastics supply chains of Aotearoa New Zealand. This interactive tool is designed for plastics recyclers and manufacturers to input their waste and product data—eventually building the *first* significantly large map of the ecosystem.
 

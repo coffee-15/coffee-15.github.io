@@ -4,7 +4,7 @@ category: work
 date: 2025-06-18
 type: video game
 cover-image: /assets/Pictures/MyDreamPC.png
-permalink: /MyDreamPC/
+permalink: /ProjectMyDreamPC/
 tag: "cultural"
 layout: post
 media:  /assets/Pictures/MyDreamPC.png

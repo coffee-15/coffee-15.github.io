@@ -3,8 +3,8 @@ title: Flow Map
 category: work
 date: 2025-06-18
 type: interactive tool
-cover-image: /assets/Pictures/flowmap1.png
-permalink: /ProjectInDeepWater/
+cover-image: /assets/Pictures/flowmap1_169.png
+permalink: /ProjectFlowMap/
 tag: "business"
 layout: post
 media:  /assets/Pictures/flowmap1.png
