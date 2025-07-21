@@ -17,7 +17,7 @@ The game seeks to bridge gaps between traditional masculine hobbies and feminine
 
 ## A cosy game installation
 
-![Sub Image](/assets/Pictures/MyDreamPC.png)
+![Sub Image](/assets/Pictures/MCPC01.png)
 
 Originally made in only two months, the digital game presents with an accompanying physical PC tower and peripheral devices decorated with objects and lighting to mirror its cosy digital counterpart. This hybrid display pays homage to influential decor games, community forums, and feminine PC building stars.
 
