@@ -3,7 +3,7 @@ const ctx = canvas.getContext('2d');
 
 let trail = [];
 const trailLength = 20;
-const pixelSize = 40;
+const pixelSize = 60;
 const radius = 120;
 
 let images = [];
