@@ -129,7 +129,7 @@ body {
     scroll-snap-align: start;
     width: auto;
     border: 1px solid black;
-    background: var(--cream, white);
+    background: var(--tomato);
     display: flex;
     flex-direction: column;
   }
@@ -218,7 +218,7 @@ body {
   border: 1px solid black;
   display: flex;
   flex-direction: column;
-  background: var(--cream, white);
+  background: var(--tomato);
 }
 
 .about-card img {
