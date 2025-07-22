@@ -41,6 +41,12 @@
                 
                 
                 
+                
+                
+                
+                
+                
+                
                 <div class="post-card" data-tag="development">
                     <div class="post-text">
                         <!--<h2>MAKING IN DEEP WATER</h2>-->
@@ -56,22 +62,16 @@
                         </div>
                     </div>
 
-                    <div class="post-images">
+                    <div class="post-images" id="blog-post-images">
                         
                         <img src="/assets/Pictures/InDeepWatersCover.png" alt="Post image 1">
                         
-                        <!-- 
+                        
                         <img src="/assets/Pictures/MyDreamPC.png" alt="Post image 2">
-                         -->
+                         
                     </div>
 
                 </div>
-                
-                
-                
-                
-                
-                
                 
                 
                 
@@ -90,13 +90,13 @@
                         </div>
                     </div>
 
-                    <div class="post-images">
+                    <div class="post-images" id="blog-post-images">
                         
                         <div></div>
                         
-                        <!-- 
+                        
                         <img src="/assets/Pictures/MyDreamPC.png" alt="Post image 2">
-                         -->
+                         
                     </div>
 
                 </div>
@@ -108,7 +108,13 @@
         <a class="home-button" href="/">
             <img src="/assets/Home_MedRes.png" alt="Home">
         </a>
-
+<script>
+    if (window.innerWidth <= 1024) {
+        console.log("Condition true")
+        const elements = document.querySelectorAll('.post-images');
+        elements.forEach(el => el.remove());
+    }
+</script>
 </body>
 
 </html>
