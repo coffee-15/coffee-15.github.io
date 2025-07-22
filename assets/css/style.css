@@ -55,16 +55,16 @@ body {
   position: absolute;
   top: calc(var(--baseline) * 3);
   left: 40px;
-  font-size: 9rem;
+  font-size: clamp(5rem, 9vw, 9rem); /* ✅ Responsive font size */
   line-height: 80%;
   font-family: "terminal_grotesque";
 }
 
 @media (max-width: 767px) {
   .title {
-    font-size: 25vw;
+    /* font-size: 25vw; */
     position: fixed;
-    top: calc(var(--baseline) * 1);
+    /* top: calc(var(--baseline) * 1); */
     margin: auto;
     padding-left: 0%;
    }
@@ -73,7 +73,7 @@ body {
 /* Tablet */
 @media (min-width: 768px) and (max-width: 1024px) {
   .title {
-    font-size: 7rem;
+    /* font-size: 7rem; */
     position: absolute;
   }
 }
@@ -94,7 +94,7 @@ body {
 
 @media (max-width: 767px) {
   .indented-1 {
-    margin-left: 40px;
+    margin-left: 60px;
   }
 }
 
@@ -112,7 +112,8 @@ body {
 
 @media (max-width: 767px) {
   .indented-2 {
-    margin-left: 0px;
+    margin-left: 130px;
+    margin-top: -9px;
   }
 }
 
@@ -129,7 +130,8 @@ body {
 
 @media (max-width: 767px) {
   .indented-3 {
-    margin-left: 40px;
+    margin-left: 90px;
+    margin-top: -9px;
   }
 }
 

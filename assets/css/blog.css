@@ -64,6 +64,10 @@ h1 {
   gap: 32px;
 }
 
+.content {
+  padding-bottom: 70px
+}
+
 @media (max-width: 767px) {
   .posts {
     display: flex;
@@ -171,6 +175,9 @@ h1 {
     display: flex;
     margin: 0%;
     padding: 0%;
+  }
+  .post-text{
+        width: 100%;
   }
 }
 
