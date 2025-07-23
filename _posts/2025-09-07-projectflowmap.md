@@ -2,10 +2,10 @@
 title: Plastics NZ Sector Network
 category: work
 date: 2025-06-18
-type: System Simulator
+type: system simulator
 cover-image: /assets/Pictures/flowmap1_169.png
 permalink: /ProjectFlowMap/
-tag: "business"
+tag: "environmental"
 layout: post
 media:  /assets/Pictures/flowmap1.png
 ---

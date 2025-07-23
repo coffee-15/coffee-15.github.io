@@ -5,7 +5,7 @@ date: 2025-07-20
 type: game + installation
 cover-image: /assets/Pictures/MyDreamPC.png
 permalink: /ProjectMyDreamPC/
-tag: "cultural"
+tag: "social"
 layout: post
 media:  /assets/Pictures/MyDreamPC.png
 ---

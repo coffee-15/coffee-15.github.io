@@ -5,7 +5,7 @@ date: 2025-06-18
 type: tabletop game
 cover-image: /assets/Pictures/me1_169.png
 permalink: /ProjectMarketEntropy/
-tag: "business"
+tag: "environmental"
 layout: post
 media:  /assets/Pictures/me1.jpg
 ---
