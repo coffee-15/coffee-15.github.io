@@ -1,8 +1,8 @@
 ---
-title: Material Map
+title: Plastic Waste Simulator
 category: work
 date: 2025-06-18
-type: interactive tool
+type: Systme Simulator
 cover-image: /assets/Pictures/MaterialMap_1.png
 permalink: /ProjectMaterialMap/
 tag: "business"

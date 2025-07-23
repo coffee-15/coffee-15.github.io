@@ -2,7 +2,7 @@
 title: My Dream PC
 category: work
 date: 2025-06-18
-type: video game
+type: game + installation
 cover-image: /assets/Pictures/MyDreamPC.png
 permalink: /ProjectMyDreamPC/
 tag: "cultural"

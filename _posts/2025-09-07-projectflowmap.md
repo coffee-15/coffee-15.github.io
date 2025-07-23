@@ -1,8 +1,8 @@
 ---
-title: Flow Map
+title: Plastics NZ Sector Network
 category: work
 date: 2025-06-18
-type: interactive tool
+type: System Simulator
 cover-image: /assets/Pictures/flowmap1_169.png
 permalink: /ProjectFlowMap/
 tag: "business"
