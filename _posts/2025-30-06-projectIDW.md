@@ -9,17 +9,22 @@ tag: "environmental"
 layout: post
 media:  /assets/Pictures/InDeepWatersCover.png
 ---
-In Deep Water invites players to explore an artfully sculpted digital marine biorama. 
+## "There may be more plastic than fish in the ocean, by weight, by 2025." WEF 2016
 
-Natural ecosystems in Aotearoa New Zealand can be observed through quirky game controls and are accompanied by research on the impacts of plastic waste on the habitats of species such as birds, kelp, and whales. While investigating shallow coastlines and deep ocean waters, players witness how a thriving environment can eventually turn desolate as a consequence of human action and *inaction*. 
+In Deep Water invites players to explore an artfully sculpted digital marine biorama inspired by Aotearoa New Zealand’s fragile aquatic ecosystems. Blending rigorous scientific research with delightful, exploratory gameplay, this sim-game is grounded in collaborations with real-world marine researchers who are working to understand and mitigate the impacts of plastic pollution.
 
-Players encounter a retro-futuristic control panel—possibly created by a rogue scientist—full of buttons, dials, and levers. These controls help to navigate stunning NZ waterways and discover abandoned sensors installed by previously negligent companies and concerned research groups. If enough vital data is collected from these beacons it's possible that the environment which is increasingly troubled by microplastics may be saved from future (and present) devastation.
+Set within the shallow coastlines and deep ocean waters of Oceania, players use quirky, retro-futuristic controls—resembling something from a rogue scientist’s garage or an abandoned observatory—to navigate waterways, scan for data beacons, and track tagged marine species. These levers, buttons, dials, and sliders create novel and tactile modes of interaction that encourage slow, curious exploration.
 
-## "Using fun controllers and accidentally learning how bad plastics are."
+## "More than 90% of plastics ever produced have never been recycled."
 
 
 ![Sub Image](/assets/Pictures/InDeepWatersCover.png)
 
-The discoverable data is sourced from experienced, real-world microbiologists who devote specific attention to local Aotearoa waterways and the life that resides in and around them.
 
-A prototype of In Deep Water showcased in the 2025 ACMI Audience Lab, and is the first in a series seeking to capture the previous and current vitality of Oceania water biomes— *before* they are irrevocably changed.
+As players uncover lost data left behind by negligent corporations and concerned researchers, they come to understand how microplastics are affecting birds, kelp, whales, and other marine life. The experience highlights how thriving environments can become desolate through human action—and inaction—while also inviting players to imagine alternative futures in which recovery is still possible.
+In Deep Water sources its environmental data from microbiologists and scientific groups focused on Aotearoa’s unique waterways. Through play, it enables meaningful public engagement with ecological research, contributing to broader awareness of the urgent challenges facing marine biodiversity.
+A prototype of In Deep Water was featured in the 2025 ACMI Audience Lab and marks the beginning of a series of Games of Consequence titles dedicated to capturing the vitality of Oceania water biomes—before they are irrevocably changed.
+
+
+
+World Economic Forum, Ellen MacArthur Foundation and McKinsey & Company, (2016) The New Plastics Economy: Rethinking the future of plastics. https://www.ellenmacarthurfoundation.org/the-new-plastics-economy-rethinking-the-future-of-plastics 
