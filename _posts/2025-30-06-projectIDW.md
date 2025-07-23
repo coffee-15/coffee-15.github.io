@@ -1,7 +1,7 @@
 ---
 title: In Deep Water
 category: work
-date: 2025-06-18
+date: 2025-07-23
 type: eco-sim + game
 cover-image: /assets/Pictures/InDeepWatersCover.png
 permalink: /InDeepWater/

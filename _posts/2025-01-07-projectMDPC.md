@@ -1,7 +1,7 @@
 ---
 title: My Dream PC
 category: work
-date: 2025-06-18
+date: 2025-07-20
 type: game + installation
 cover-image: /assets/Pictures/MyDreamPC.png
 permalink: /ProjectMyDreamPC/
