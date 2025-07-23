@@ -1,7 +1,7 @@
 ---
 title: Meta&shy;Forest
 category: work
-date: 2025-07-20
+date: 2025-07-15
 type: installation + VR
 cover-image: /assets/Pictures/Meta3.png
 permalink: /MetaForest/
