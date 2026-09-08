@@ -1,0 +1,82 @@
+:root {
+    /* Font Weights */
+    --bold: 700;
+    --normal: 400;
+    --light: 300;
+}
+body {
+    background: #F9F5F0;
+    font-family: "Instrument Serif", serif;
+    font-feature-settings: "ss02" 1, "ss03" 1;
+    font-size: 12px;
+    overflow: hidden;
+}
+
+.page {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    padding: 40px 40px 0px 40px;
+    flex-direction: column;
+    display: flex;
+    gap: 24px;
+    border-radius: 40px;
+    align-items: center;
+    background: #FBFAF3;
+    justify-content: center;
+    box-shadow: 0 2px 0 0 #FFF inset, 0 0 80px -20px rgba(227, 203, 79, 0.20);
+}
+
+.container-heading {
+    color: #403935;
+    font-family: "Instrument Serif", serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    justify-self: center;
+}
+
+.coffee-box {
+    display: flex;
+    padding: 14px 18px;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    border-radius: 12px;
+    border: 1px solid #FFF;
+    background: rgba(227, 203, 79, 0.15);
+}
+
+.coffee-box-subheading {
+color: #E4BD12;
+text-align: center;
+font-family: "Atkinson Hyperlegible Mono";
+font-size: 0.8rem;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+text-transform: uppercase;
+}
+
+.coffee-box-brew{
+    color: #965000;
+text-align: center;
+font-family: "Instrument Serif";
+font-size: 2rem;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+text-decoration-line: underline;
+text-decoration-style: wavy;
+text-decoration-skip-ink: auto;
+text-decoration-thickness: 5%;
+text-underline-offset: 0%;
+text-underline-position: from-font;
+}
