@@ -16,7 +16,7 @@
     <link rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_forward" />
     <link rel="stylesheet" href="/assets/css/project.css">
-
+  
     <style>
 .material-symbols-rounded {
   font-variation-settings:
@@ -26,8 +26,16 @@
   'opsz' 20
 }
 
+     .js .reveal {
+        opacity: 0;
+        transform: translateY(28px);
+        transition: opacity .6s ease, transform .6s ease;
+      }
+      .js .reveal.in { opacity: 1; transform: none; }
+
+
 body {
-    overflow-x: hidden;
+  overflow-x: hidden;
 }
 </style>
 
@@ -99,7 +107,7 @@ body {
                   {% if project != page %}
                   <a href="{{ project.url }}">
                     <div
-                      class="bg-lower-surface rounded-2xl relative object-cover overflow-clip  md:aspect-[2/.9] aspect-[4/3]">
+                      class="reveal bg-lower-surface rounded-2xl relative object-cover overflow-clip  md:aspect-[2/.9] aspect-[4/3]">
                       <img
                         class="object-cover w-full md:aspect-[2/.9] aspect-[4/3] rounded-2xl transition-transform duration-300 transform hover:scale-105"
                         src="{{ project.headline-image }}"
@@ -124,4 +132,23 @@ body {
       </main>
       {% include footer.html %}
     </body>
+
+     <script>
+  if ('IntersectionObserver' in window) {
+    document.documentElement.classList.add('js');  // turn the hidden state on
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;   // skip blocks that are still off screen
+        entry.target.classList.add('in');    // CSS runs the transition
+        observer.unobserve(entry.target);    // once is enough
+      });
+    }, {
+      root: document,                    // this page's own viewport, even inside a frame
+      rootMargin: '0px 0px -10% 0px',    // start a little above the bottom edge
+    });
+
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+  }
+</script>
   </html>

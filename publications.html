@@ -60,27 +60,32 @@ title: Publications
         <!-- Buttons -->
         <div class="mt-[-8px] mb-2">
             <button
-                class="active:bg-off-white active:text-background hover:bg-upper-surface bg-lower-surface text-steel-50 py-1 px-3 rounded-md font-heading text-sm">
+                class="active publication-filter__btn"
+                data-filter="all">
                 All
             </button>
             <button
-                class="active:bg-off-white active:text-background hover:bg-upper-surface bg-lower-surface text-steel-50 py-1 px-3 rounded-md font-heading text-sm">
+            class="publication-filter__btn"
+            data-filter="engineering">
                 Engineering
             </button>
             <button
-                class="active:bg-off-white active:text-background hover:bg-upper-surface bg-lower-surface text-steel-50 py-1 px-3 rounded-md font-heading text-sm">
+            class="publication-filter__btn"
+            data-filter="business">
                 Business
             </button>
             <button
-                class="active:bg-off-white active:text-background hover:bg-upper-surface bg-lower-surface text-steel-50 py-1 px-3 rounded-md font-heading text-sm">
+            class="publication-filter__btn"
+            data-filter="design">
                 Design
             </button>
         </div>
 
-        {% for publication in site.publications %}
-        <a href="{{ publication.url }}">
+    {% assign sorted-publications = site.publications | sort: 'post-date' | reverse %}
+    {% for publication in sorted-publications %}
+        <a href="{{ publication.url }}" class="reveal">
             <div
-                class="publication-list__item reveal">
+                class="publication-list__item" data-categories="{{ publication.team }}">
                 <h2>
                     {{ publication.title }}
                 </h2>
@@ -99,3 +104,5 @@ title: Publications
         {% endfor %}
     </div>
 </div>
+
+<script src="{{ '/assets/js/filter.js' | relative_url }}"></script>

@@ -54,7 +54,7 @@ html {
   background-position: center;
 }
 .blur-wrap img {
-  width: auto;
+  width: 100%;
   height: 100%;
   display: block;
   opacity: 0;
@@ -145,8 +145,17 @@ html {
 
   background-color: var(--color-lower-surface);
   border-radius: 16px;
-  transition: background-color 0.15s ease;
+  opacity: 0;
+  transition: opacity .6s ease, background-color 0.15s;
+
 }
+
+.publication-list__item.is-visible {
+  opacity: 1;
+  transition: opacity .6s ease, transform .6s ease, background-color 0.15s;
+}
+
+
 
 .publication-list__item:hover {
   background-color: var(--color-upper-surface);
@@ -205,6 +214,27 @@ html {
   color: var(--color-steel-100) !important;
   font-family: var(--font-body);
   opacity: 80%;
+}
+
+/* Publication Btns */
+.publication-filter__btn {
+  background-color: var(--color-lower-surface);
+  color: var(--color-steel-50);
+  padding: 4px 12px 4px 12px;
+  border-radius: 6px;
+  font-family: var(--font-heading);
+ font-size: var(--text-sm) /* 0.875rem = 14px */;
+ line-height: var(--tw-leading, var(--text-sm--line-height) /* calc(1.25 / 0.875) ≈ 1.428571 */);
+}
+
+/* Publication Btns */
+.publication-filter__btn:hover {
+  background-color: var(--color-upper-surface);
+}
+
+.publication-filter__btn.active {
+  background-color: var(--color-off-white);
+  color: var(--color-background);
 }
 
 @keyframes marquee-scroll {
