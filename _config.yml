@@ -1,7 +1,5 @@
 title: My Site
 description: A Jekyll site styled with Tailwind
-baseurl: ""
-url: ""
 
 plugins:
   - jekyll-feed
