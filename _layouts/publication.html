@@ -25,6 +25,12 @@
   'GRAD' 0,
   'opsz' 20
 }
+      .js .reveal {
+        opacity: 0;
+        transform: translateY(28px);
+        transition: opacity .6s ease, transform .6s ease;
+      }
+      .js .reveal.in { opacity: 1; transform: none; }
 </style>
 
   </head>
@@ -34,14 +40,14 @@
       <!-- Header -->
       <div class="w-full pt-0 top-0 sticky">
         <div
-          class="relative object-cover overflow-clip aspect-[3/4] h-[68dvh] md:h-[60dvh] md:w-full">
+          class="relative object-cover overflow-clip aspect-[3/4] h-dvh md:w-full">
           <img class="object-cover h-dvh md:w-full"
             src="{{ page.headline-image }}"
             alt="alternatetext">
         </div>
       </div>
       <div
-        class="w-full flex flex-col gap-12  py-32 md:py-48 md:pt-32 mt-[-20px] bg-background relative rounded-t-3xl">
+        class="reveal w-full flex flex-col gap-12 top-0 py-32 md:py-48 md:pt-32 mt-[-520px] md:mt-[-800px] lg:mt-[-420px] bg-background relative rounded-t-3xl">
         <div class="site-container site-grid">
           <div
             class="relative col-span-full md:col-span-20 md:col-start-3 flex flex-col gap-12 md:pb-6 pb-2">
@@ -55,7 +61,7 @@
         <!-- Page Content -->
         <div class="site-container site-grid">
           <div
-            class="col-span-full mt-[-24px] relative lg:col-span-14 lg:col-start-3 md:col-span-20 md:col-start-3 flex flex-col gap-4">
+            class="col-span-full mt-[-24px] relative lg:col-span-14 lg:col-start-3  md:col-span-20 md:col-start-3 flex flex-col gap-4">
             <h3
               class="font-mono uppercase text-smoke-50 py-1 px-3 text-sm font-bold border-1 rounded-md border-smoke-50 w-fit">{{
               page.team }}</h3>
@@ -94,7 +100,7 @@
               {% if publication != page %}
               <a href="{{ project.url }}">
                 <div
-                  class="publication-card flex flex-col gap-4 p-4 bg-lower-surface rounded-2xl">
+                  class="reveal publication-card flex flex-col gap-4 p-4 bg-lower-surface rounded-2xl">
                   <div
                     class="bg-lower-surface rounded-lg relative object-cover overflow-clip  md:aspect-[2/.9] aspect-[4/3]">
                     <img
@@ -128,4 +134,30 @@
       </main>
       {% include footer.html %}
     </body>
+
+    <script>
+  document.querySelectorAll('.blur-wrap img').forEach(img => {
+  if (img.complete) img.classList.add('loaded');
+  else img.addEventListener('load', () => img.classList.add('loaded'));
+});
+</script>
+
+  <script>
+  if ('IntersectionObserver' in window) {
+    document.documentElement.classList.add('js');  // turn the hidden state on
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;   // skip blocks that are still off screen
+        entry.target.classList.add('in');    // CSS runs the transition
+        observer.unobserve(entry.target);    // once is enough
+      });
+    }, {
+      root: document,                    // this page's own viewport, even inside a frame
+      rootMargin: '0px 0px -10% 0px',    // start a little above the bottom edge
+    });
+
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+  }
+</script>
   </html>
