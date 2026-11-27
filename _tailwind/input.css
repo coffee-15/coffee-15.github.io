@@ -54,7 +54,7 @@ html {
   background-position: center;
 }
 .blur-wrap img {
-  width: 100%;
+  width: auto;
   height: 100%;
   display: block;
   opacity: 0;
