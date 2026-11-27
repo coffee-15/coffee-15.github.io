@@ -1,0 +1,229 @@
+---
+layout: default
+title: People
+---
+<!-- Header Card -->
+<div class="site-container site-grid reveal">
+    <div
+        class="relative col-span-full md:col-span-22 md:col-start-2">
+        <div
+            class="relative flex lg:flex-row flex-col-reverse md:flex-initial md:gap-12 gap-8">
+            <div class="relative flex-1 flex-col gap-6">
+                <h1
+                    class="font-heading font-bold md:text-5xl text-4xl text-off-white">
+                    Statement about working as 3 teams, across disciplines,
+                    integrating industry insight, etc.
+                </h1><br>
+                <h3 class="font-heading text-steel-100 flex md:text-2xl">
+                    Detailed research statements lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit. Nunc sit amet sem eget
+                    lorem
+                    imperdiet semper sed scelerisque dolor. Cras consequat
+                    dolor
+                    diam, ac condimentum orci ullamcorper vel. Mauris
+                    accumsan
+                    egestas eros eu commodo. Quisque suscipit mattis mi,
+                    commodo
+                    molestie felis accumsan vel. Ut sed pellentesque turpis,
+                    non
+                    convallis turpis.
+                </h3>
+            </div>
+            <div
+                class="relative object-cover aspect-[4/3] flex-2 rounded-2xl overflow-clip w-full lg:max-w-[600px]">
+                <img src="/assets/images/Temp/FoilRainbow-H.jpg"
+                    class="w-full h-full object-center object-cover">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Engineering Team -->
+<div class="site-container site-grid">
+    <div
+        class="relative col-span-full md:col-span-20 md:col-start-3 flex-col flex gap-2">
+        <h2
+            class="font-heading capitalize font-bold text-3xl md:text-4xl">Engineering</h2>
+        <!-- Leads -->
+        <p
+            class="font-mono uppercase text-smoke-100 text-lg leading-10">leads</p>
+        
+        <!-- Johan -->
+        <div class="reveal flex md:flex-row flex-col md:pb-2 pb-4 md:gap-8 gap-4">
+            <!-- Image Card -->
+            <div class="overflow-clip flex flex-1 rounded-2xl object-cover aspect-[3/4] lg:max-w-80 md:max-w-100">
+                <img src="/assets/images/People/Johan_Verbeek_HD.jpg"
+                    class="w-full h-full object-cover object-center">
+            </div>
+            <!-- Personal Info -->
+            <div class="flex flex-2 flex-col gap-2 h-fit">
+                <h4 class="font-heading text-steel-50 text-2xl">Professor Johan
+                    Verbeek</h4>
+                <p class="text-smoke-100 text-lg">Director</p>
+                <p class="text-steel-100 text-lg">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Morbi faucibus pellentesque magna. Nullam commodo quam ac
+                    libero convallis vehicula.
+                    Vestibulum ante ipsum primis in faucibus orci luctus et
+                    ultrices posuere cubilia curae; Integer ipsum urna, faucibus
+                    in gravida at, gravida in erat.
+                    Suspendisse potenti.</p>
+                </div>
+        </div>
+
+        <!-- Simon -->
+        <div class="reveal flex md:flex-row flex-col md:pb-2 pb-4 md:gap-8 gap-4">
+            <!-- Image Card -->
+            <div class="overflow-clip flex flex-1 rounded-2xl object-cover aspect-[3/4] lg:max-w-80 md:max-w-100">
+                <img src="/assets/images/People/Simon_Bickerton.jpg"
+                    class="w-full h-full object-cover object-center">
+            </div>
+            <!-- Personal Info -->
+            <div class="flex flex-2 flex-col gap-2">
+                <h4 class="font-heading text-steel-50 text-2xl">Professor Simon Bickerton</h4>
+                <p class="text-smoke-100 text-lg">Director</p>
+                <p class="text-steel-100 text-lg">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Morbi faucibus pellentesque magna. Nullam commodo quam ac
+                    libero convallis vehicula.
+                    Vestibulum ante ipsum primis in faucibus orci luctus et
+                    ultrices posuere cubilia curae; Integer ipsum urna, faucibus
+                    in gravida at, gravida in erat.
+                    Suspendisse potenti.</p>
+            </div>
+        </div>
+        <!-- Team -->
+        <p
+            class="font-mono uppercase text-smoke-100 text-lg leading-10">team</p>
+        <div
+            class="reveal bg-lower-surface rounded-2xl flex flex-wrap lg:gap-y-6 md:gap-y-6 gap-y-4 md:gap-x-8  lg:gap-x-12 py-8 px-10">
+            {% for person in site.data.people %}
+            {% if person.team == "Engineering" %}
+            {% if person.img == "none" %}
+            <div class="team-split">
+                    <h4 class="font-heading text-steel-100 text-lg md:text-xl lg:text-2xl">{{
+                        person.name }}</h4>
+                    <p class="text-smoke-100 text-xs md:text-sm lg:text-lg">{{ person.title
+                        }}</p>
+                   </div>
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<!-- Business Team -->
+<div class="site-container site-grid">
+    <div
+        class="relative col-span-full md:col-span-20 md:col-start-3 flex-col flex gap-2">
+        <h2
+            class="font-heading capitalize font-bold text-3xl md:text-4xl">Business</h2>
+        <!-- Leads -->
+        <p
+            class="font-mono uppercase text-smoke-100 text-lg leading-10">leads</p>
+        <!-- Julia -->
+            <div class="reveal flex md:flex-row flex-col md:pb-2 pb-4 md:gap-8 gap-4">
+            <!-- Image Card -->
+            <div class="overflow-clip flex flex-1 rounded-2xl object-cover aspect-[3/4] lg:max-w-80 md:max-w-100">
+                <img src="/assets/images/People/Julia-A-Fehrer-edited.jpg"
+                    class="w-full h-full object-cover object-center">
+            </div>
+            <!-- Personal Info -->
+            <div class="flex-2 flex-col gap-2">
+                <h4 class="font-heading text-steel-50 text-2xl">Assoc. Professor
+                    Julia A. Fehrer</h4>
+                <p class="text-smoke-100 text-lg">Director</p>
+                <p class="text-steel-100 text-lg">
+                    Julia A. Fehrer is Associate Professor of Innovation and
+                    Strategy and serves as Co-Director of the Circular Economy
+                    in Business Research Centre at the University of Auckland.
+                    Her research forms at the intersection of strategy, service
+                    research, and innovation, focusing on market and ecosystem
+                    innovation as catalyst for digital and societal
+                    transformation.
+                    <br><br>
+                    She is the Academic Lead of the Disciplinay Area Innovation
+                    and Strategy, co-chairs a Special Interest Group focused on
+                    Market Shaping and Innovation (MASHIN) and contributes to
+                    the Journal of Service Management, Journal of Service Theory
+                    and Practice, and AMS Review as a member of their editorial
+                    boards.</p>
+            </div>
+        </div>
+        <!-- Team -->
+        <p
+            class="font-mono uppercase text-smoke-100 text-lg leading-10">team</p>
+        <div
+            class="reveal bg-lower-surface rounded-2xl flex flex-wrap lg:gap-y-6 md:gap-y-6 gap-y-4 md:gap-x-8  lg:gap-x-12 py-8 px-10">
+            {% for person in site.data.people %}
+            {% if person.team == "Business" %}
+            {% if person.img == "none" %}
+            <div class="team-split">
+          
+                    <h4 class="font-heading text-steel-100 text-lg md:text-xl lg:text-2xl">{{
+                        person.name }}</h4>
+                    <p class="text-smoke-100 text-xs md:text-sm lg:text-lg">{{ person.title
+                        }}</p>
+              
+                   </div>
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<!-- Design Team -->
+<div class="site-container site-grid">
+    <div
+        class="relative col-span-full md:col-span-20 md:col-start-3 flex-col flex gap-2">
+        <h2
+            class="font-heading capitalize font-bold text-3xl md:text-4xl">Design</h2>
+        <!-- Leads -->
+        <p
+            class="font-mono uppercase text-smoke-100 text-lg leading-10">leads</p>
+        <!-- Deb -->
+            <div class="reveal flex md:flex-row flex-col md:pb-2 pb-4 md:gap-8 gap-4">
+            <!-- Image Card -->
+            <div class="overflow-clip flex flex-1 rounded-2xl object-cover aspect-[3/4] lg:max-w-80 md:max-w-100">
+                <img src="/assets/images/People/professor-deb-polson-3.png"
+                    class="w-full h-full object-cover object-center">
+            </div>
+            <!-- Personal Info -->
+            <div class="flex-2 flex-col gap-2">
+                <h4 class="font-heading text-steel-50 text-2xl">Professor Deb
+                    Polson</h4>
+                <p class="text-smoke-100 text-lg">Director</p>
+                <p class="text-steel-100 text-lg">
+                    Over the last 25 years, Deb has designed large-scale data
+                    visualisations for policymakers, strange immersive
+                    experiences with theatre directors, digital distractions for
+                    young patients in hospital beds, intelligent energy
+                    modelling systems for urban developers, playful simulations
+                    for museum curators, and more.</p>
+            </div>
+        </div>
+        <!-- Team -->
+        <p
+            class="font-mono uppercase text-smoke-100 text-lg leading-10">team</p>
+        <div
+            class="reveal bg-lower-surface rounded-2xl flex flex-wrap lg:gap-y-6 md:gap-y-6 gap-y-4 md:gap-x-8  lg:gap-x-12 py-8 px-10">
+            {% for person in site.data.people %}
+            {% if person.team == "Design" %}
+            {% if person.img == "none" %}
+               <div class="team-split">
+          
+                    <h4 class="font-heading text-steel-100 text-lg md:text-xl lg:text-2xl">{{
+                        person.name }}</h4>
+                    <p class="text-smoke-100 text-xs md:text-sm lg:text-lg">{{ person.title
+                        }}</p>
+              
+                   </div>
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+         
+        </div>
+    </div>
+</div>

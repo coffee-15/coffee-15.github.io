@@ -1,0 +1,101 @@
+{% assign items = site.publications | sort: "date" | reverse | limit: 4 %}
+
+<div class="site-grid site-container">
+<section class="relative col-span-full lg:col-span-22 lg:col-start-2 flex flex-col gap-2" data-pub-list>
+  
+  <!-- Heading -->
+  <span class="justify-between flex-col md:flex-row flex gap-2">
+      <p class="font-mono capitalize text-smoke-100 text-xl leading-10">LATEST
+        PUBLICATIONS
+      </p>
+      <a href="/publications.html"
+        class="bg-off-white font-heading leading-6 text-upper-surface rounded-lg flex justify-between py-2 px-4 w-full md:w-2xs hover:scale-105 transition-transform duration-300 active:scale-98">
+        See All Publications
+        <span class="material-symbols-rounded">
+          arrow_forward
+        </span>
+     
+      </a>
+    </span>
+
+  <div class="grid gap-3 pt-2 md:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)]">
+
+    <!-- Stacked Images -->
+    <div class="relative min-h-64 md:aspect-auto aspect-[2/0.9] w-full object-center overflow-hidden rounded-2xl bg-neutral-800 md:min-h-0">
+      {% for item in items %}
+        <img src="{{ item.headline-image | relative_url }}"
+             alt="{{ item.title | escape }}"
+             loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"
+             data-pub-image="{{ forloop.index0 }}"
+             data-active="{% if forloop.first %}true{% else %}false{% endif %}"
+             class="absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-300 ease-out data-[active=true]:opacity-100 motion-reduce:transition-none">
+      {% endfor %}
+    </div>
+
+    <!-- List of Publications -->
+    <ul class="flex flex-col gap-3 md:pt-0 pt-2">
+      {% for item in items %}
+        <li>
+          <a href="{{ item.url | relative_url }}"
+             data-pub-item="{{ forloop.index0 }}"
+             data-active="{% if forloop.first %}true{% else %}false{% endif %}"
+             class="group block rounded-2xl bg-lower-surface px-4 py-3 transition-colors duration-300
+                    data-[active=true]:bg-upper-surface
+                    focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-300">
+
+            <h3 class="text-xl font-heading text-steel-100 transition-colors duration-200
+                       group-data-[active=true]:text-3xl group-data-[active=true]:pb-2 group-data-[active=true]:font-bold group-data-[active=true]:text-off-white md:text-2xl">
+              {{ item.title }}
+            </h3>
+
+            {% comment %} Expandable details: grid-rows 0fr -> 1fr animates height. {% endcomment %}
+            <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out
+                        group-data-[active=true]:grid-rows-[1fr] motion-reduce:transition-none">
+              <div class="overflow-hidden">
+                <div class="pt-2">
+                  {% if item.team %}
+                    <p
+                        class="publication-list__item_tag">
+                        {{ item.team }}
+                </p>
+                  {% endif %}
+                  {% if item.authors %}
+                    <!-- Authors -->
+                    <p class="text-steel-100 font-body pb-0">{{ item.authors |
+                        join: ', ' }} </p>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+</div>
+
+<script>
+  (function () {
+    document.querySelectorAll('[data-pub-list]').forEach(function (root) {
+      var rows = root.querySelectorAll('[data-pub-item]');
+      var images = root.querySelectorAll('[data-pub-image]');
+
+      function activate(index) {
+        rows.forEach(function (el) {
+          el.dataset.active = el.dataset.pubItem === index ? 'true' : 'false';
+        });
+        images.forEach(function (el) {
+          el.dataset.active = el.dataset.pubImage === index ? 'true' : 'false';
+        });
+      }
+
+      rows.forEach(function (row) {
+        var i = row.dataset.pubItem;
+        row.addEventListener('mouseenter', function () { activate(i); }); // mouse
+        row.addEventListener('focus', function () { activate(i); });      // keyboard
+        row.addEventListener('touchstart', function () { activate(i); }, { passive: true }); // touch
+      });
+    });
+  })();
+</script>

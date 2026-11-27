@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title | default: site.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  {% seo %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Stack+Sans+Text:wght@200..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_outward" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_forward" />
+<style>
+.material-symbols-rounded {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 20
+}
+     .js .reveal {
+        opacity: 0;
+        transform: translateY(28px);
+        transition: opacity .6s ease, transform .6s ease;
+      }
+      .js .reveal.in { opacity: 1; transform: none; }
+</style>
+
+</head>
+<body class="bg-background text-off-white antialiased scroll-smooth">
+  {% include header.html %}
+  <main class="w-full">
+    <!-- Header -->
+<div class="w-full pt-0 top-0 sticky">
+  <div
+    class="relative object-cover overflow-clip aspect-[3/4] md:h-dvh md:w-full blur-wrap"
+    style="background-image: url(/assets/images/Temp/BottleRubbish-H-Tiny.jpg);">
+    <img class="object-cover h-full md:w-full"
+    loading="lazy"  
+    src="/assets/images/Temp/BottleRubbish-H.jpg"
+      alt="alternatetext">
+    <div class="absolute inset-0  bg-linear-to-t from-black/65 to-black/0
+    aspect-[3/4] md:aspect-[1.78]  h-full md:w-full"></div>
+    <h1 class="reveal absolute bottom-4 md:bottom-0 text-wrap align-text-bottom
+      font-heading text-3xl font-bold md:text-6xl
+      p-6 md:p-12">
+      Universities and industry working together to keep more plastic in use and
+      out of landfill
+    </h1>
+  </div>
+</div>
+    <div class="w-full flex flex-col gap-y-48 py-32 md:py-48 bg-background mt-[-24px] md:mt-0 relative rounded-t-3xl">
+    {{ content }}
+    </div>
+  </main>
+  {% include footer.html %}
+</body>
+
+<script>
+  document.querySelectorAll('.blur-wrap img').forEach(img => {
+  if (img.complete) img.classList.add('loaded');
+  else img.addEventListener('load', () => img.classList.add('loaded'));
+});
+</script>
+
+  <script>
+  if ('IntersectionObserver' in window) {
+    document.documentElement.classList.add('js');  // turn the hidden state on
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;   // skip blocks that are still off screen
+        entry.target.classList.add('in');    // CSS runs the transition
+        observer.unobserve(entry.target);    // once is enough
+      });
+    }, {
+      root: document,                    // this page's own viewport, even inside a frame
+      rootMargin: '0px 0px -10% 0px',    // start a little above the bottom edge
+    });
+
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+  }
+</script>
+
+</html>

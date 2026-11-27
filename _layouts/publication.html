@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page.title | default: site.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+    {% seo %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Stack+Sans+Text:wght@200..700&display=swap"
+      rel="stylesheet">
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_outward" />
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_forward" />
+    <link rel="stylesheet" href="/assets/css/publication.css">
+
+    <style>
+.material-symbols-rounded {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 20
+}
+</style>
+
+  </head>
+  <body class="bg-background text-off-white antialiased scroll-smooth">
+    {% include header.html %}
+    <main class="w-full">
+      <!-- Header -->
+      <div class="w-full pt-0 top-0 sticky">
+        <div
+          class="relative object-cover overflow-clip aspect-[3/4] h-[68dvh] md:h-[60dvh] md:w-full">
+          <img class="object-cover h-dvh md:w-full"
+            src="{{ page.headline-image }}"
+            alt="alternatetext">
+        </div>
+      </div>
+      <div
+        class="w-full flex flex-col gap-12  py-32 md:py-48 md:pt-32 mt-[-20px] bg-background relative rounded-t-3xl">
+        <div class="site-container site-grid">
+          <div
+            class="relative col-span-full md:col-span-20 md:col-start-3 flex flex-col gap-12 md:pb-6 pb-2">
+            <h1
+              class="font-heading font-bold md:text-5xl text-4xl text-off-white">
+              {{ page.title }}
+            </h1>
+          </div>
+        </div>
+
+        <!-- Page Content -->
+        <div class="site-container site-grid">
+          <div
+            class="col-span-full mt-[-24px] relative lg:col-span-14 lg:col-start-3 md:col-span-20 md:col-start-3 flex flex-col gap-4">
+            <h3
+              class="font-mono uppercase text-smoke-50 py-1 px-3 text-sm font-bold border-1 rounded-md border-smoke-50 w-fit">{{
+              page.team }}</h3>
+            <h3 class="font-heading text-steel-100">{{ page.date | date:
+              "%d %B, %Y" }}</h3>
+            <span class="publication-content">
+              {{content}}
+            </span>
+          </div>
+
+        </div>
+
+        <!-- Links to Other Projects -->
+        <div class="site-container site-grid">
+          <div
+            class="relative col-span-full md:col-span-22 md:col-start-2 flex flex-col gap-2">
+            <span class="justify-between flex-col md:flex-row flex gap-2">
+              <p
+                class="font-mono uppercase text-smoke-100 text-xl leading-10">Recent
+                Publications
+              </p>
+              <a href="/publications.html"
+                class="bg-off-white font-heading leading-6 text-upper-surface rounded-lg flex justify-between py-2 px-4 w-full md:w-2xs hover:scale-105 transition-transform duration-300 active:scale-98">
+                See All Publications
+                <span class="material-symbols-rounded">
+                  arrow_forward
+                </span>
+              </a>
+            </span>
+
+            <div class="md:grid md:grid-cols-2 lg:grid lg:grid-cols-3 flex flex-col gap-4 pt-2">
+              {% assign projectlimit = 4 %}
+              {% for publication in site.publications %}
+              {% assign index = forloop.index %}
+              {% if index < projectlimit %}
+              {% if publication != page %}
+              <a href="{{ project.url }}">
+                <div
+                  class="publication-card flex flex-col gap-4 p-4 bg-lower-surface rounded-2xl">
+                  <div
+                    class="bg-lower-surface rounded-lg relative object-cover overflow-clip  md:aspect-[2/.9] aspect-[4/3]">
+                    <img
+                      class="object-cover w-full md:aspect-square aspect-[4/3] transition-transform duration-300 transform hover:scale-105"
+                      src="{{ publication.headline-image }}"
+                      alt="{{ publication.title }}">
+                  </div>
+                  <h3 class="publication-card_heading">{{ publication.title
+                    }}</h3>
+                  <h4 class="publication-list__item_tag">{{ publication.team
+                    }}</h4>
+                  <!-- Authors -->
+                  <p>{{ publication.authors | join: ', ' }} </p>
+                  <!-- Journal and Date -->
+                  <p
+                    class="publication-list__item_details">
+                    {{ publication.journal | append: ", "}}{{ publication.date |
+                    date:
+                    "%d %B, %Y" }}</p>
+                </div>
+              </a>
+              {% else if publication == page %}
+              {% assign projectlimit = 5 %}
+              {% continue %}
+              {% endif%}
+              {% endif %}
+              {% endfor%}
+            </div>
+          </div>
+        </div>
+      </main>
+      {% include footer.html %}
+    </body>
+  </html>

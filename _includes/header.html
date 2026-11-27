@@ -1,0 +1,85 @@
+<header class="fixed inset-x-0 top-0 z-50">
+
+  <!-- Blurred backdrop -->
+  <div id="nav-backdrop"
+       class="fixed inset-0 z-0 bg-black/30 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300"></div>
+
+  <!-- Toggle button (always visible, sits above the drawer) -->
+   <a href="/">
+   <div class="fixed flex md:w-full w-screen flex-row justify-between p-6 z-20">
+    <div class="rounded-md bg-background/20 backdrop-blur-md flex py-2 px-3">
+      <img src="/assets/images/Logos/Logo_OffWhite.png" class="h-fit max-h-8">
+    </div>
+    </a>
+  
+    <button id="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="nav-drawer"
+          class="flex items-center gap-3 rounded-lg bg-background/20 backdrop-blur-md px-3 py-2.5 font-mono font-bold text-off-white">
+      <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16" />
+    </svg>
+  </button>
+  </div>
+
+  <!-- Drawer -->
+  <nav id="nav-drawer"
+       inert
+       class="absolute inset-x-0 top-0 z-10 -translate-y-full rounded-b-3xl bg-off-white px-6 pb-12 pt-24 text-upper-surface transition-transform duration-500 ease-out">
+       <div class="flex md:gap-16 gap-6 md:flex-row flex-col">
+      <div>
+        <h2 class="mb-3 font-mono text-sm uppercase">Info</h2>
+        <ul class="space-y-2 text-md text-background font-heading">
+          <li><a href="{{ '/about/' | relative_url }}" class="hover:font-bold hover:underline">About Us</a></li>
+          <li><a href="{{ '/engineering/' | relative_url }}" class="hover:font-bold hover:underline">Engineering</a></li>
+          <li><a href="{{ '/business/' | relative_url }}" class="hover:font-bold hover:underline">Business</a></li>
+          <li><a href="{{ '/design/' | relative_url }}" class="hover:font-bold">Design</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="mb-3 font-mono text-sm uppercase">Work</h2>
+        <ul class="space-y-2 text-md text-background font-heading">
+          <li><a href="{{ '/projects/' | relative_url }} "class="hover:font-bold hover:underline">Projects</a></li>
+          <li><a href="{{ '/publications/' | relative_url }}" class="hover:font-bold hover:underline">Publications</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="mb-3 font-mono text-sm uppercase">Team</h2>
+        <ul class="space-y-2 text-md text-background font-heading">
+          <li><a href="{{ '/people/' | relative_url }}" class="hover:font-bold hover:underline">People</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script>
+  (function () {
+    const toggle   = document.getElementById('nav-toggle');
+    const drawer   = document.getElementById('nav-drawer');
+    const backdrop = document.getElementById('nav-backdrop');
+
+    function setOpen(open) {
+      drawer.classList.toggle('-translate-y-full', !open);
+      backdrop.classList.toggle('opacity-0', !open);
+      backdrop.classList.toggle('pointer-events-none', !open);
+      drawer.inert = !open;                       // keeps links out of tab order when closed
+      toggle.setAttribute('aria-expanded', open);
+    }
+
+    toggle.addEventListener('click', () =>
+      setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
+    backdrop.addEventListener('click', () => setOpen(false));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') setOpen(false); });
+  })();
+</script>
+</header>
+
+
+<!-- <header class="bg-none fixed w-full z-100">
+  <nav class="flex mx-6 items-center justify-between px-4 py-4">
+    <a href="{{ '/' | relative_url }}" class="text-lg font-bold text-off-white">{{ site.title }}</a>
+    <a href="{{ '/about/' | relative_url }}" class="text-sm text-off-white transition-colors transition-300 hover:text-steel-50">Menu</a>
+  </nav>
+</header> -->

@@ -1,0 +1,10 @@
+.project-content {
+    color: var(--color-steel-50);
+    font-family: var(--font-body);
+    white-space: pre-line;
+    text-wrap-mode: wrap;
+}
+
+.project-content img {
+    border-radius: 16px;
+}

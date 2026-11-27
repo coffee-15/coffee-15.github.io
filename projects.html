@@ -1,0 +1,66 @@
+---
+layout: default
+title: Projects
+---
+<!-- Featured Work -->
+<div class="site-container site-grid">
+    <div
+        class="relative col-span-full md:col-span-22 md:col-start-2 flex flex-col gap-2">
+        <h1
+            class="font-heading font-bold md:text-5xl text-4xl pb-4 md:pb-6">Projects</h1>
+        <p
+            class="font-mono capitalize text-smoke-100 text-lg leading-10">FEATURED</p>
+
+        {% for project in site.projects %}
+            {% if project.featured == true %}
+                <a href="{{ project.url }}">
+                    <div
+                        class="reveal bg-lower-surface rounded-2xl relative object-cover overflow-clip aspect-[3/4] md:aspect-[2/.9]">
+                        <img
+                            class="object-cover h-full md:w-full rounded-2xl transition-transform duration-300 transform hover:scale-105"
+                            src="{{ project.headline-image }}"
+                            alt="{{ project.title }}">
+                        <div
+                            class="absolute inset-0  bg-linear-to-t from-black/65 to-black/0 to-50% aspect-[3/4] md:aspect-[1.78] pointer-events-none h-full md:w-full"></div>
+                        <h2
+                            class="absolute bottom-0 text-wrap align-text-bottom pointer-events-none font-heading text-3xl font-bold md:text-4xl p-6 md:p-12">
+                            {{ project.title }}
+                        </h2>
+                    </div>
+                </a>
+                {% break %}
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+
+<!-- All Projects -->
+<div class="site-container site-grid">
+    <div
+        class="relative col-span-full md:col-span-20 md:col-start-3 flex flex-col gap-2">
+        <p
+            class="font-mono uppercase text-smoke-100 text-lg leading-10">all
+            projects</p>
+       
+            <div class="flex flex-wrap gap-2 md:gap-4 lg:gap-6">
+            <!-- Liquid Loop -->
+            {% for project in site.projects %}
+            <a href="{{ project.url }}" class="reveal image-three-split">
+                <div
+                    class="bg-lower-surface rounded-2xl relative object-cover overflow-clip aspect-square">
+                    <img
+                        class="object-cover w-full aspect-square rounded-2xl transition-transform duration-300 transform hover:scale-105"
+                        src="{{ project.headline-image }}"
+                        alt="{{ project.title }}">
+                    <div
+                        class="absolute inset-0  bg-linear-to-t from-black/65 to-black/0 to-65% pointer-events-none w-full h-full"></div>
+                    <h2
+                        class="absolute bottom-0 text-wrap align-text-bottom pointer-events-none font-heading text-xl font-bold lg:text-3xl md:text-2xl p-4 lg:px-12 lg:py-8">
+                        {{ project.title }}
+                    </h2>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</div>

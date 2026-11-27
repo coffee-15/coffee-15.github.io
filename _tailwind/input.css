@@ -1,0 +1,322 @@
+@import "tailwindcss";
+
+/* Optional: tell Tailwind where your templates live (it auto-detects most files) */
+@source "../_layouts";
+@source "../_includes";
+@source "../_posts";
+@source "../*.html";
+@source "../*.md";
+
+@theme {
+  /* Colours */
+  --color-sunken: oklch(21.318% 0.00424 264.524);
+  --color-background: oklch(25.53% 0.00639 258.425);
+  --color-lower-surface: oklch(29.875% 0.013 253.069);
+  --color-upper-surface: oklch(36.018% 0.01816 268.194);
+  --color-smoke-100: oklch(57.423% 0.01348 101.709);
+  --color-smoke-50: oklch(63.261% 0.01062 72.487);
+  --color-off-white: oklch(90.594% 0.00589 59.127);
+  --color-steel-100: oklch(67.838% 0.02859 264.392);
+  --color-steel-50: oklch(73.615% 0.03604 263.539);
+
+  /* Typography */
+  --font-mono: "Space Mono", monospace;
+  --font-heading: "Space Grotesk", sans-serif;
+  --font-body: "Stack Sans Text", sans-serif;
+
+  --shadow-button-lg: box-shadow: 0px 0px 50px 20px rgba(0, 0, 0, 0.80);
+}
+
+:root {
+  --grid-cols: 24;
+  --site-margin-horz: 24px;
+  /* Gradients */
+  --gradient-50: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+}
+
+html {
+  overflow-x: hidden;
+}
+
+.site-container {
+  width: 100%;
+  padding-inline: var(--site-margin-horz);
+}
+
+.site-grid {
+  grid-template-columns: repeat(var(--grid-cols), 1fr);
+  display: grid;
+}
+
+/* Blur In */
+.blur-wrap {
+  background-size: cover;
+  background-position: center;
+}
+.blur-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.blur-wrap img.loaded { opacity: 1; }
+
+/* Marquee */
+.marquee-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 25s linear infinite;
+}
+
+.marquee-track {
+  display: flex;
+  gap: 24px;
+  padding: 0 12px;
+}
+
+.image-three-split {
+  flex: 1 calc(50% - 4px);
+  display: flex;
+  max-width: calc(50% - 4px);
+}
+
+/* Tablet */
+@media (width >=48rem) {
+  .image-three-split {
+    flex: 1 calc(50% - 8px);
+    display: flex;
+    max-width: calc(50% - 8px);
+  }
+}
+
+/* Wide */
+@media (width >= 64rem /* 1024px */) {
+  .image-three-split {
+    flex: 1 1 calc(33.333% - 24px);
+    display: flex;
+    max-width: calc(33.333% - 12px);
+  }
+}
+
+.image-three-split a {
+  flex: 1 1 calc(33.333% - 12px);
+  display: flex;
+  max-width: calc(33.333% - 12px);
+}
+.team-split {
+    flex-direction: column;
+    display: flex;
+    width: 100%
+  }
+
+/* Tablet */
+@media (width >=48rem) {
+  .team-split {
+    flex-direction: column;
+    flex: 1 1 calc(33.333% - 16px - 8px);
+    display: flex;
+    max-width: calc(33.333% - 16px - 8px);
+  }
+}
+
+/* Wide */
+@media (width >=64rem) {
+  .team-split {
+    flex-direction: column;
+    flex: 1 1 calc(33.333% - 16px - 16px);
+    display: flex;
+    max-width: calc(33.333% - 16px - 16px);
+  }
+}
+
+/* Publications */
+.publication-list__item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.24rem;
+
+  padding: 16px 24px 16px 24px;
+
+  background-color: var(--color-lower-surface);
+  border-radius: 16px;
+  transition: background-color 0.15s ease;
+}
+
+.publication-list__item:hover {
+  background-color: var(--color-upper-surface);
+  transition: background-color 0.15s ease;
+}
+
+.publication-list__item:hover h2 {
+  color: var(--color-off-white);
+  font-weight: bold;
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  line-height: var(--tw-leading, var(--text-2xl--line-height));
+  padding-bottom: calc(var(--spacing) * 1.5);
+  transition: font-weight 0.3s ease, font-size 0.3s ease;
+}
+
+.publication-list__item:hover .publication-list__item_tag {
+  display:block;
+  visibility: visible;
+  opacity: 1;
+  line-height: var(--tw-leading, var(--text-xs--line-height));
+   font-size: var(--text-xs);
+  margin-bottom: var(--spacing);
+  transition: visibility 0s, opacity 0.3s ease, line-height 0.15s;
+}
+
+.publication-list__item h2 {
+  color: var(--color-steel-50);
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  line-height: var(--tw-leading, var(--text-xl--line-height));
+  padding-bottom:  4px;
+  transition: font-weight 0.3s ease, font-size 0.3s ease;
+}
+
+.publication-list__item p {
+  color: var(--color-steel-50);
+  font-size: var(--text-sm);
+  line-height: var(--tw-leading, var(--text-sm--line-height));
+  font-family: var(--font-body);
+}
+
+.publication-list__item_tag {
+  color: var(--color-smoke-50);
+  border: 1px solid var(--color-smoke-50);
+  padding: 2px 6px 2px 6px;
+  width: fit-content;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  border-radius: var(--radius-md);
+  font-size: var(--text-xs);
+  margin-bottom: 4px;
+}
+
+.publication-list__item_details{
+  color: var(--color-steel-100) !important;
+  font-family: var(--font-body);
+  opacity: 80%;
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-item {
+  aspect-ratio: 3 / 4;
+  overflow: clip;
+  max-height: 400px;
+  border-radius: 24px;
+  object-fit: cover;
+}
+
+.marquee-item img {
+  width: 100%;
+  height: 100%;
+  object-position: center;
+}
+
+.marquee-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+/* Space Mono */
+@font-face {
+  .space-mono-regular {
+    font-family: "Space Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .space-mono-bold {
+    font-family: "Space Mono", monospace;
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  .space-mono-regular-italic {
+    font-family: "Space Mono", monospace;
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  .space-mono-bold-italic {
+    font-family: "Space Mono", monospace;
+    font-weight: 700;
+    font-style: italic;
+  }
+}
+
+/* Space Grotesk */
+@font-face {
+  .space-grotesk-400 {
+    font-family: "Space Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .space-grotesk-600 {
+    font-family: "Space Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  .space-grotesk-700 {
+    font-family: "Space Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+  }
+}
+
+/* Stack Sans */
+@font-face {
+  .stack-sans-text-400 {
+    font-family: "Stack Sans Text", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .stack-sans-text-italic-400 {
+    font-family: "Stack Sans Text", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  .stack-sans-text-700 {
+    font-family: "Stack Sans Text", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  .stack-sans-text-italic-700 {
+    font-family: "Stack Sans Text", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: italic;
+  }
+}

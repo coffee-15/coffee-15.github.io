@@ -1,0 +1,26 @@
+title: My Site
+description: A Jekyll site styled with Tailwind
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+exclude:
+  - package.json
+  - package-lock.json
+  - node_modules
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+
+collections:
+  projects:
+    permalink: /projects/:permalink/
+    output: true
+    collections_dir: /_projects
+    sort-by: date
+  publications:
+    permalink: /publications/:permalink/
+    output: true
+    collections_dir: /_publications
+    sort-by: date

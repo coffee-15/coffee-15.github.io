@@ -1,0 +1,60 @@
+<div class="site-container site-grid">
+  <div
+    class="relative col-span-full md:col-span-22 md:col-start-2 flex flex-col gap-2">
+    <p class="font-mono capitalize text-smoke-100 text-lg leading-10">FEATURED
+      WORK</p>
+
+      <!-- Featured Main -->
+      {% for project in site.projects %}
+       {% if project.featured == true %}
+          <a href="{{ project.url }}">
+            <div
+              class="bg-lower-surface rounded-2xl relative object-cover overflow-clip aspect-[3/4] md:aspect-[2/.9]">
+              <img
+                class="object-cover h-full md:w-full rounded-2xl transition-transform duration-300 transform hover:scale-105"
+                src="{{ project.headline-image }}"
+                alt="{{ project.title }}">
+              <div
+                class="absolute inset-0  bg-linear-to-t from-black/65 to-black/0 to-60% aspect-[3/4] md:aspect-[1.78] pointer-events-none h-full md:w-full"></div>
+              <h2
+                class="absolute bottom-0 text-wrap align-text-bottom pointer-events-none font-heading text-3xl font-bold md:text-4xl p-6 md:p-8 lg:p-12">
+                {{ project.title }}
+              </h2>
+            </div>
+          </a>
+          {% break %}
+        {% endif %}
+      {% endfor %}
+
+    <!-- Featured Recents -->
+    <div class="md:grid md:grid-cols-3 flex flex-col gap-4 pt-4">
+     {% for project in site.projects limit:3 %}
+      <a href="{{ project.url }}">
+        <div
+          class="bg-lower-surface rounded-2xl relative object-cover overflow-clip md:aspect-[4/3] aspect-[4/3]">
+          <img
+            class="object-cover w-full md:aspect-[4/3] aspect-[4/3] rounded-2xl transition-transform duration-300 transform hover:scale-105"
+            src="{{ project.headline-image }}"
+            alt="{{ project.title }}">
+          <div
+            class="absolute inset-0  bg-linear-to-t from-black/65 to-black/0 to-80% pointer-events-none h-full md:w-full"></div>
+          <h2
+            class="absolute bottom-0 text-wrap align-text-bottom pointer-events-none font-heading font-bold text-2xl lg:text-3xl p-6 md:p-8 lg:p-12">
+            {{ project.title }}
+          </h2>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+    <div class="w-full flex justify-center pt-2">
+      <a href="/projects.html"
+        class="bg-off-white font-heading text-upper-surface rounded-lg flex justify-between py-2 px-4 w-2xs md:w-md hover:scale-105 transition-transform duration-300 active:scale-98">
+        Explore Projects
+        <span class="material-symbols-rounded">
+          arrow_forward
+        </span>
+   
+    </a>
+    </div>
+  </div>
+</div>

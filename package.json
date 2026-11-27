@@ -1,0 +1,20 @@
+{
+  "name": "tailwind-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "css:watch": "tailwindcss -i ./_tailwind/input.css -o ./assets/css/main.css --watch",
+    "css:build": "tailwindcss -i ./_tailwind/input.css -o ./assets/css/main.css --minify",
+    "dev": "tailwindcss -i ./_tailwind/input.css -o ./assets/css/main.css --watch & bundle exec jekyll serve --livereload"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.3.5",
+    "tailwindcss": "^4.3.5"
+  }
+}

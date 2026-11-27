@@ -1,0 +1,101 @@
+---
+layout: default
+title: Publications
+---
+<!-- Featured Publication -->
+<div class="site-container site-grid">
+    <div
+        class="relative col-span-full md:col-span-22 md:col-start-2 flex flex-col gap-2">
+        <h1
+            class="font-heading font-bold md:text-5xl text-4xl pb-4 md:pb-6">Publications</h1>
+        <p
+            class="font-mono capitalize text-smoke-100 text-lg leading-10">FEATURED</p>
+
+        <!-- Liquid -->
+        {% assign featured = site.publications | first %}
+
+        <a href="{{ featured.url }}">
+            <div
+                class="reveal flex lg:flex-row flex-col py-6 px-6 md:py-8 md:px-10 lg:py-16 lg:px-20 md:gap-6 lg:gap-12 bg-upper-surface rounded-2xl">
+                <!-- Image -->
+                <div
+                    class="flex object-center object-cover lg:aspect-[2/.9] aspect-[4/3] rounded-2xl overflow-clip max-w-[800px]">
+                    <img
+                        class="w-full h-full object-center object-cover transition-transform duration-300 transform hover:scale-105"
+                        src="{{ featured.headline-image }}"
+                        alt="{{ featured.title }}">
+                </div>
+                <!-- Information -->
+                <div class="flex flex-col">
+                    <h2
+                        class="font-heading text-off-white md:text-4xl text-2xl pb-3 font-bold hover:underline">
+                        {{ featured.title }}
+                    </h2>
+                    <!-- Tag          -->
+                    <p
+                        class="text-smoke-50 font-mono uppercase rounded-md mb-3 text-sm border-smoke-50 border-1 py-1 px-3 w-fit">
+                        {{ featured.team }}</p>
+                    <!-- Authors -->
+                    <p class="text-steel-100 font-body pb-0">{{ featured.authors |
+                        join: ', ' }} </p>
+                    <!-- Journal and Date -->
+                    <p class="text-steel-100 opacity-80 pb-2 text font-body">
+                        {{ featured.journal | append: ", "}}{{ featured.date |
+                        date: "%d %B, %Y" }}</p>
+                    <!-- Abstract -->
+                    <p class="text-steel-50 pb-2">{{ featured.sub-heading }}</p>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+<!-- All publications -->
+<div class="site-container site-grid">
+    <div
+        class="relative col-span-full lg:col-span-20 lg:col-start-3 flex flex-col gap-2">
+        <p class="font-mono uppercase text-smoke-100 text-lg leading-10">All
+            publications</p>
+
+        <!-- Buttons -->
+        <div class="mt-[-8px] mb-2">
+            <button
+                class="active:bg-off-white active:text-background hover:bg-upper-surface bg-lower-surface text-steel-50 py-1 px-3 rounded-md font-heading text-sm">
+                All
+            </button>
+            <button
+                class="active:bg-off-white active:text-background hover:bg-upper-surface bg-lower-surface text-steel-50 py-1 px-3 rounded-md font-heading text-sm">
+                Engineering
+            </button>
+            <button
+                class="active:bg-off-white active:text-background hover:bg-upper-surface bg-lower-surface text-steel-50 py-1 px-3 rounded-md font-heading text-sm">
+                Business
+            </button>
+            <button
+                class="active:bg-off-white active:text-background hover:bg-upper-surface bg-lower-surface text-steel-50 py-1 px-3 rounded-md font-heading text-sm">
+                Design
+            </button>
+        </div>
+
+        {% for publication in site.publications %}
+        <a href="{{ publication.url }}">
+            <div
+                class="publication-list__item reveal">
+                <h2>
+                    {{ publication.title }}
+                </h2>
+                <!-- Tag          -->
+                <div class="publication-list__item_tag">
+                    {{ publication.team }}</div>
+                <!-- Authors -->
+                <p>{{ publication.authors | join: ', ' }} </p>
+                <!-- Journal and Date -->
+                <p
+                    class="publication-list__item_details">
+                    {{ publication.journal | append: ", "}}{{ featured.date | date:
+                    "%d %B, %Y" }}</p>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</div>
